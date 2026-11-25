@@ -352,10 +352,13 @@ class _MobileAppBar extends StatelessWidget {
       );
     }
 
+    // On Liquid Glass the buttons share a capsule, whose edge — not a
+    // glyph — lines up with the page margin.
+    final liquid = LiquidGlass.isActive(context, theme.appBarTheme.liquidGlass);
     return AppBar(
       padding: EdgeInsetsDirectional.only(
         start: start,
-        end: theme.gap(GapSize.sm),
+        end: liquid ? start : theme.gap(GapSize.sm),
       ),
       actionsGap: 0,
       leading: DemoLogo(onPressed: () => onSelected(DemoDestination.home)),
