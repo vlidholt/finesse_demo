@@ -126,7 +126,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: d65ff4c63bfdd91abd0c8058f46f42093e52c002
+      resolved-ref: "153f230071ccfc4dc6a12852be9e13a78f4ea5a5"
       url: "https://github.com/vlidholt/finesse.git"
     source: git
     version: "0.1.0"
