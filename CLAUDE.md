@@ -250,6 +250,17 @@ package's own performance rules (cards do not blur, a scrolling page is a
 layer, something that never stops is painted, not built) are in
 `finesse`'s `CLAUDE.md`.
 
+**Timing on an iPhone needs the JIT.** iOS 27 Safari runs a page served
+over plain http without it (WebKit bug 324968, intended): JavaScript and
+WebAssembly are interpreted, and a build served from a Mac on the LAN
+measures five to twenty times too slow. Time a phone over https (the
+Pages deploy), or on the LAN with Safari's Enhanced Security Heuristics
+feature flag off. With the JIT on, Home scrolled at 59 fps in every top
+bar variant tried; the differences were in late frames (over 17.5 ms): an
+opaque top bar about 5 %, six blur strips about 10 %, a one-pass shader
+blur about 20 %. On the web the glass top bar is therefore finesse's
+solid bar (`finesse`'s `CLAUDE.md`, "Liquid Glass").
+
 ## Testing
 
 - `test/support.dart` has `setUpFonts` (google_fonts fetching off, so Geist
