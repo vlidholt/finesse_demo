@@ -16,8 +16,13 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SolidartConfig.devToolsEnabled = false;
   // finesse bundles no fonts. Fetch Geist before the first frame, so the app
-  // does not open in the fallback font and then reflow.
-  await loadAppFont(timeout: const Duration(seconds: 3));
+  // does not open in the fallback font and then reflow. On iOS and macOS,
+  // bars, menus, sheets and controls are drawn with Liquid Glass: load its
+  // shaders now too, so the first glass surfaces are not a frame late.
+  await Future.wait([
+    loadAppFont(timeout: const Duration(seconds: 3)),
+    LiquidGlass.initialize(),
+  ]);
   runApp(const App());
 }
 
