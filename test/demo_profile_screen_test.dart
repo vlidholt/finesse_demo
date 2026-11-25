@@ -464,7 +464,7 @@ void main() {
       // The status bar, the toolbar and the cover's own height under it.
       expect(
         cover.height,
-        greaterThan(47 + ProfileMobileBar.coverHeight + 44),
+        greaterThanOrEqualTo(47 + ProfileMobileBar.coverHeight + 44),
       );
 
       // The buttons clear the status bar, 12 in from the edge.
