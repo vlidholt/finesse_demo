@@ -22,7 +22,9 @@ import 'package:flutter/widgets.dart';
 ///
 /// The three buttons are the theme's outline icon buttons — a solid disc
 /// with a hairline — because they have to read on the photograph while the
-/// bar is expanded and on the bar's surface once it has collapsed.
+/// bar is expanded and on the bar's surface once it has collapsed. On
+/// Liquid Glass they are plain icons on the bar's glass capsules, as on
+/// every other screen's bar.
 class ProfileMobileBar extends StatelessWidget {
   const ProfileMobileBar({
     required this.onBack,
@@ -43,6 +45,22 @@ class ProfileMobileBar extends StatelessWidget {
     const person = ProfileData.person;
     // The buttons sit 12 from the edges, inside the page's 16 margin.
     final inset = theme.gap(GapSize.md);
+    final liquid = LiquidGlass.isActive(context, theme.appBarTheme.liquidGlass);
+    IconButton button({
+      required Widget icon,
+      required String semanticLabel,
+      required VoidCallback onPressed,
+    }) => liquid
+        ? IconButton.ghost(
+            icon: icon,
+            semanticLabel: semanticLabel,
+            onPressed: onPressed,
+          )
+        : IconButton.outline(
+            icon: icon,
+            semanticLabel: semanticLabel,
+            onPressed: onPressed,
+          );
 
     // The bar follows the scroll in paint, so every frame of its collapse
     // paints it again. Its buttons do not change with it: each is a layer
@@ -53,7 +71,7 @@ class ProfileMobileBar extends StatelessWidget {
       // The profile is a destination, not a pushed page: its back button
       // is its own, and goes Home.
       leading: RepaintBoundary(
-        child: IconButton.outline(
+        child: button(
           icon: PhosphorIcon(
             Directionality.of(context) == TextDirection.rtl
                 ? PhosphorIconsRegular.arrowRight
@@ -86,7 +104,7 @@ class ProfileMobileBar extends StatelessWidget {
       ),
       actions: [
         RepaintBoundary(
-          child: IconButton.outline(
+          child: button(
             icon: const PhosphorIcon(PhosphorIconsRegular.magnifyingGlass),
             semanticLabel: 'Search',
             onPressed: onSearch,
@@ -97,7 +115,7 @@ class ProfileMobileBar extends StatelessWidget {
         RepaintBoundary(
           child: UserMenu(
             showProfile: false,
-            builder: (context, controller, _) => IconButton.outline(
+            builder: (context, controller, _) => button(
               icon: const PhosphorIcon(PhosphorIconsRegular.dotsThree),
               semanticLabel: 'More options',
               onPressed: controller.toggle,
