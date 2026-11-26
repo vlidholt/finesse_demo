@@ -24,7 +24,8 @@ import 'package:una_demo/widgets/verified_badge.dart';
 /// photograph an outline disc, which reads on the picture while the bar is
 /// expanded and on the bar's surface once it has collapsed; on Liquid
 /// Glass plain icons on the bar's capsules, as on every other screen's
-/// bar.
+/// bar; in a browser plain icons on the filled toolbar, the photograph
+/// starting below it.
 class ProfileMobileBar extends StatelessWidget {
   const ProfileMobileBar({
     required this.onBack,
@@ -35,9 +36,10 @@ class ProfileMobileBar extends StatelessWidget {
   final VoidCallback onBack;
   final VoidCallback onSearch;
 
-  /// The height of the cover under the toolbar: the profile's own picture
-  /// size, on no scale.
-  static const coverHeight = 132.0;
+  /// The height of the cover under the toolbar, on no scale: tall enough
+  /// for the photograph to read as a landscape above the name, and for a
+  /// good part of it to stay in view as the page starts to move.
+  static const coverHeight = 220.0;
 
   @override
   Widget build(BuildContext context) {

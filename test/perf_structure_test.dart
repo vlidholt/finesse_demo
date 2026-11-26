@@ -107,9 +107,13 @@ void main() {
           pageScrollPosition(tester)!.jumpTo(0);
           await tester.pump();
           expect(collapse.buildsPerFrame, 0, reason: collapse.topBuilds());
+          // An average over a fixed distance of scroll: with the cover at
+          // 220, every frame of it is still collapsing (at 132 the bar
+          // had settled for the last few), so the budget is higher than
+          // the work per collapsing frame, which did not change.
           expect(
             collapse.paintsPerFrame,
-            lessThan(40),
+            lessThan(44),
             reason: collapse.topPaints(),
           );
           // Nothing of the page is among them.
