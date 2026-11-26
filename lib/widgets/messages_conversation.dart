@@ -304,47 +304,43 @@ class MessagesConversationPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         height: _barHeight,
-        // 8 at the sides, so the 44-point buttons' glyphs — not their boxes
-        // — line up with the page margin, and 4 between everything.
-        padding: EdgeInsets.symmetric(horizontal: theme.gap(GapSize.sm)),
         gap: theme.gap(GapSize.sm),
         actionsGap: theme.gap(GapSize.xs),
-        leading: UnaRow(
-          gap: GapSize.xs,
-          mainAxisSize: MainAxisSize.min,
+        // The bar's own back button: on its own capsule on Liquid Glass,
+        // its glyph on the page margin otherwise, as on every other page.
+        leading: const BackButton(),
+        title: Row(
           children: [
-            const BackButton(),
             ConversationAvatar(
               conversation,
               // The bar is the surface here, not a card.
               surfaceColor: colors.bar,
             ),
+            const Gap.raw(messagesTightGap + 4),
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(conversation.name),
+                  Text(
+                    conversation.online ? 'Active now' : conversation.headline,
+                    style: theme.messagesCaption.copyWith(
+                      color: conversation.online ? colors.tint : null,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
-        title: Padding(
-          // 10 between the avatar and the name: the bar's 4 and these 6.
-          padding: const EdgeInsetsDirectional.only(start: messagesTightGap),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(conversation.name),
-              Text(
-                conversation.online ? 'Active now' : conversation.headline,
-                style: theme.messagesCaption.copyWith(
-                  color: conversation.online ? colors.tint : null,
-                ),
-              ),
-            ],
-          ),
-        ),
         actions: [
-          IconButton.ghost(
+          IconButton(
             icon: const PhosphorIcon(PhosphorIconsRegular.phone),
             semanticLabel: 'Call',
             onPressed: () => startCall(context, conversation.name),
           ),
-          IconButton.ghost(
+          IconButton(
             icon: const PhosphorIcon(PhosphorIconsRegular.videoCamera),
             semanticLabel: 'Video call',
             onPressed: () => startCall(context, conversation.name, video: true),

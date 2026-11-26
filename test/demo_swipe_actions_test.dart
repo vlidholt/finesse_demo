@@ -291,7 +291,7 @@ void main() {
         const MessagesScreen(),
         size: demoPhone,
       );
-      await _swipe(tester, find.text('Demo Assistant'), -160);
+      await _swipe(tester, find.text('Una Assistant'), -160);
       expect(find.text('Mute'), findsOneWidget);
       expect(find.text('Delete'), findsNothing);
     });

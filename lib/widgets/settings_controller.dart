@@ -17,8 +17,8 @@ enum SettingsSection {
 
 /// Who can see the profile.
 enum ProfileVisibility {
-  public('Public', 'Anyone on or off Demo'),
-  members('Demo members', 'Only people who are signed in'),
+  public('Public', 'Anyone on or off Una'),
+  members('Una members', 'Only people who are signed in'),
   connections('Connections', 'Only people you are connected to');
 
   const ProfileVisibility(this.label, this.detail);
@@ -29,7 +29,7 @@ enum ProfileVisibility {
 
 /// Who may start a conversation.
 enum MessagePolicy {
-  anyone('Anyone on Demo'),
+  anyone('Anyone on Una'),
   secondDegree('Connections and their connections'),
   connections('Connections only');
 
@@ -69,7 +69,7 @@ enum Personalisation {
   ),
   research(
     'Invite me to research',
-    'A few short studies a year about Demo itself',
+    'A few short studies a year about Una itself',
   );
 
   const Personalisation(this.label, this.detail);

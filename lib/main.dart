@@ -6,6 +6,7 @@ import 'package:una/una.dart';
 import 'package:una_demo/app_state.dart';
 import 'package:una_demo/demo_shell.dart';
 import 'package:una_demo/session.dart';
+import 'package:una_demo/teal_color_scheme.dart';
 import 'package:una_demo/widgets/jobs_board_view.dart';
 
 export 'package:una_demo/app_state.dart';
@@ -63,14 +64,15 @@ Future<void> loadAppFont({
   }
 }
 
-/// The package's default look, set in Geist: the theme the designs were
-/// drawn in. Built once; `UnaApp` switches between the two.
+/// The package's default style on the Demo's teal palette, set in Geist:
+/// the theme the designs were drawn in. Built once; `UnaApp` switches
+/// between the two.
 final appTheme = ThemeData(
-  brightness: Brightness.light,
+  colorScheme: const TealColorScheme.light(),
   textTheme: appTextTheme,
 );
 final appDarkTheme = ThemeData(
-  brightness: Brightness.dark,
+  colorScheme: const TealColorScheme.dark(),
   textTheme: appTextTheme,
 );
 
@@ -84,7 +86,7 @@ final demoProviders = <InstantiableProvider>[
   jobsViewProvider,
 ];
 
-/// Demo: a fictional professional network, built with una.
+/// Una: a fictional professional network, the demo app of the una package.
 class App extends StatelessWidget {
   const App({super.key});
 

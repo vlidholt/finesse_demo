@@ -338,13 +338,13 @@ void main() {
       expect(
         find.descendant(
           of: find.byWidget(rows.first),
-          matching: find.text('Demo Assistant'),
+          matching: find.text('Una Assistant'),
         ),
         findsOneWidget,
       );
       // But the designs' conversation is the one that is open.
       expect(rows.first.selected, isFalse);
-      await _open(tester, 'Demo Assistant');
+      await _open(tester, 'Una Assistant');
       expect(find.text('Ask the assistant…'), findsOneWidget);
       expect(_inThread(find.byIcon(PhosphorIconsFill.sparkle)), findsOneWidget);
     });
@@ -359,7 +359,7 @@ void main() {
             replies: replies,
             brightness: brightness,
           );
-          await _open(tester, 'Demo Assistant');
+          await _open(tester, 'Una Assistant');
           expect(stop, findsNothing);
 
           await _send(tester, 'Draft a post about calm interfaces');
@@ -435,7 +435,7 @@ void main() {
       tester,
     ) async {
       await _pump(tester, size: _desktop, replies: replies);
-      await _open(tester, 'Demo Assistant');
+      await _open(tester, 'Una Assistant');
       await _send(tester, 'Help me prepare for a call');
       await _settle(tester, frames: 4);
       answer.add('A short plan for the call: open with the outcome ');
@@ -464,7 +464,7 @@ void main() {
       tester,
     ) async {
       await _pump(tester, size: _desktop, replies: replies);
-      await _open(tester, 'Demo Assistant');
+      await _open(tester, 'Una Assistant');
       await _send(tester, 'Anything');
       await _settle(tester, frames: 6);
       expect(_inThread(find.byType(TypingIndicator)), findsOneWidget);
@@ -481,7 +481,7 @@ void main() {
 
     testWidgets('an error mid-answer ends it cleanly', (tester) async {
       await _pump(tester, size: _desktop, replies: replies);
-      await _open(tester, 'Demo Assistant');
+      await _open(tester, 'Una Assistant');
       await _send(tester, 'Anything');
       await _settle(tester, frames: 4);
       answer
@@ -496,7 +496,7 @@ void main() {
     testWidgets('scrolled back while it writes, the thread holds still and '
         'offers the way down', (tester) async {
       await _pump(tester, size: const Size(1440, 620), replies: replies);
-      await _open(tester, 'Demo Assistant');
+      await _open(tester, 'Una Assistant');
       await _send(tester, 'Draft a post');
       await _settle(tester, frames: 4);
       answer.add(List.filled(40, 'A long first paragraph.').join(' '));
@@ -534,7 +534,7 @@ void main() {
 
     testWidgets('Clear chat goes back to the greeting', (tester) async {
       await _pump(tester, size: _desktop, replies: replies);
-      await _open(tester, 'Demo Assistant');
+      await _open(tester, 'Una Assistant');
       await _send(tester, 'Anything');
       await _settle(tester, frames: 4);
       answer.add('Some of an answer');
@@ -602,7 +602,7 @@ void main() {
 
     testWidgets('answers in the app, start to finish', (tester) async {
       await _pump(tester, size: _phone, replies: const MessagesReplies());
-      await _open(tester, 'Demo Assistant');
+      await _open(tester, 'Una Assistant');
       await _send(tester, 'Help me prepare for a call');
       for (var i = 0; i < 40; i++) {
         await tester.pump(const Duration(milliseconds: 50));

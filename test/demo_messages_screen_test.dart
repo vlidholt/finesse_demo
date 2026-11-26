@@ -205,7 +205,7 @@ void main() {
 
       const rows = {
         // Pinned above the conversations.
-        'Demo Assistant': (
+        'Una Assistant': (
           '1m',
           'Ask me to draft a post, tighten a message or prepare for a call.',
         ),

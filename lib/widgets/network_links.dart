@@ -37,7 +37,7 @@ Future<void> showInviteDialog(BuildContext context) async {
     showDemoToast(
       context,
       'Invitation sent',
-      description: 'We will let you know when $email joins Demo.',
+      description: 'We will let you know when $email joins Una.',
     );
   }
 }
@@ -77,7 +77,7 @@ class _InviteDialogState extends State<_InviteDialog> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      title: const Text('Invite someone to Demo'),
+      title: const Text('Invite someone to Una'),
       description: const Text(
         'They get one email with a link to join and connect with you.',
       ),

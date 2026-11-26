@@ -11,8 +11,8 @@ import 'package:una_demo/screens/notifications_screen.dart';
 import 'package:una_demo/screens/profile_screen.dart';
 import 'package:una_demo/screens/search_screen.dart';
 import 'package:una_demo/session.dart';
-import 'package:una_demo/widgets/una_logo.dart';
 import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/una_logo.dart';
 
 import 'support.dart';
 
@@ -394,6 +394,17 @@ void main() {
       );
       expect(find.byType(SearchScreen), findsOneWidget);
     });
+  });
+
+  testWidgets('the app is on its own teal palette, light and dark', (
+    tester,
+  ) async {
+    await pumpApp(tester);
+    expect(
+      Theme.of(appContext(tester)).colorScheme,
+      const TealColorScheme.light(),
+    );
+    expect(appDarkTheme.colorScheme, const TealColorScheme.dark());
   });
 
   group('on a phone (390x844)', () {

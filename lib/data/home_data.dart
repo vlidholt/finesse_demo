@@ -547,7 +547,7 @@ abstract final class HomeData {
     'Advertising',
   ];
 
-  static const copyright = 'Demo © 2026';
+  static const copyright = 'Una © 2026';
 
   /// Every image the home feed shows, for a caller that wants them decoded
   /// before the first frame (a screenshot test).

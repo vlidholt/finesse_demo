@@ -230,7 +230,7 @@ void main() {
         '4,812 posts',
         'Remote design teams',
         'Help center',
-        'Demo © 2026',
+        'Una © 2026',
       ]) {
         expect(find.text(text), findsOneWidget, reason: text);
       }

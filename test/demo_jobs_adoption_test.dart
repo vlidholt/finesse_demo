@@ -292,7 +292,7 @@ void main() {
       // The toast clears the page's apply bar.
       final bar = find.ancestor(
         of: find.widgetWithText(Button, 'View application'),
-        matching: find.byType(Glass),
+        matching: find.byType(Toolbar),
       );
       expect(
         tester.getBottomLeft(find.byType(Toast)).dy,

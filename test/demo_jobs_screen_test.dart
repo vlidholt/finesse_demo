@@ -612,10 +612,10 @@ void main() {
       expect(_inDetail(find.text('Product designer, Editor')), findsOneWidget);
       expect(_inDetail(find.text('Meet the hiring team')), findsOneWidget);
 
-      // "Easy Apply" lives in the glass bar at the bottom, not in the body.
+      // "Easy Apply" lives in the toolbar at the bottom, not in the body.
       expect(_inDetail(find.text('Easy Apply')), findsNothing);
       final apply = find.descendant(
-        of: inPage(find.byType(Glass)),
+        of: inPage(find.byType(Toolbar)),
         matching: find.widgetWithText(Button, 'Easy Apply'),
       );
       expect(apply, findsOneWidget);
@@ -638,7 +638,7 @@ void main() {
       await _settle(tester, frames: 4);
       expect(
         tester.getBottomLeft(_inDetail(find.text('kestrel.health'))).dy,
-        lessThan(tester.getTopLeft(inPage(find.byType(Glass))).dy),
+        lessThan(tester.getTopLeft(inPage(find.byType(Toolbar))).dy),
       );
 
       await tester.tap(inBar(find.byType(BackButton)));

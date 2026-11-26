@@ -94,9 +94,9 @@ class JobDetailPage extends StatelessWidget {
   }
 }
 
-/// The glass bar at the bottom of the phone's detail page: a hairline, the
-/// large buttons with a gap above and below them, and the device's bottom
-/// inset. The `Scaffold` measures it, so the page scrolls clear of it.
+/// The bar at the bottom of the phone's detail page: the apply and save
+/// buttons on the package's docked [Toolbar], inside the page margins. The
+/// `Scaffold` measures it, so the page scrolls clear of it.
 class _ApplyBar extends StatelessWidget {
   const _ApplyBar({required this.job, required this.state});
 
@@ -105,22 +105,26 @@ class _ApplyBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // The package's docked bar: glass on iOS and macOS, the style's bottom
+    // bar elsewhere, clear of the home indicator. Docked, not floating:
+    // the apply button takes the width the bar gives it.
     final theme = Theme.of(context);
-    final layout = theme.layoutTheme;
-    final margin = layout.gap(GapSize.md);
-    final pagePadding = (layout.pagePadding ?? EdgeInsets.zero).resolve(
-      Directionality.of(context),
-    );
-    return Glass(
-      borderRadius: BorderRadius.zero,
-      border: Border(top: BorderSide(color: theme.colorScheme.border)),
+    final side = (theme.layoutTheme.pagePadding ?? EdgeInsets.zero)
+        .resolve(Directionality.of(context))
+        .left;
+    return Toolbar(
+      floating: false,
       padding: EdgeInsets.fromLTRB(
-        pagePadding.left,
-        margin,
-        pagePadding.right,
-        margin + MediaQuery.paddingOf(context).bottom,
+        side,
+        theme.layoutTheme.gap(GapSize.sm),
+        side,
+        theme.layoutTheme.gap(GapSize.sm),
       ),
-      child: JobActions(job: job, state: state, expand: true),
+      children: [
+        Expanded(
+          child: JobActions(job: job, state: state, expand: true),
+        ),
+      ],
     );
   }
 }

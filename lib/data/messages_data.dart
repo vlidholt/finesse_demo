@@ -335,7 +335,7 @@ abstract final class MessagesData {
   /// The assistant, as the list and the panes name it. It has no portrait:
   /// `ConversationAvatar` draws its mark instead.
   static const assistantProfile = Person(
-    name: 'Demo Assistant',
+    name: 'Una Assistant',
     headline: 'Drafts, summaries and second opinions',
     avatar: '',
   );

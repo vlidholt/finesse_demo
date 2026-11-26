@@ -13,10 +13,10 @@ import 'package:una_demo/screens/profile_screen.dart';
 import 'package:una_demo/screens/search_screen.dart';
 import 'package:una_demo/session.dart';
 import 'package:una_demo/widgets/compose_dialog.dart';
-import 'package:una_demo/widgets/una_logo.dart';
 import 'package:una_demo/widgets/demo_metrics.dart';
 import 'package:una_demo/widgets/person_avatar.dart';
 import 'package:una_demo/widgets/search_bar.dart';
+import 'package:una_demo/widgets/una_logo.dart';
 import 'package:una_demo/widgets/user_menu.dart';
 
 export 'package:una_demo/navigation.dart';

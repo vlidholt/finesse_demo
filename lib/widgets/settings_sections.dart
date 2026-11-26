@@ -409,7 +409,7 @@ class _ProfileCardState extends State<_ProfileCard> {
     final theme = Theme.of(context);
     return _SettingsCard(
       title: 'Profile',
-      description: 'How you appear across Demo.',
+      description: 'How you appear across Una.',
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -583,7 +583,7 @@ class _SecurityCard extends StatelessWidget {
               icon: PhosphorIcon(PhosphorIconsRegular.deviceMobile),
             ),
             title: 'iPhone · Copenhagen',
-            detail: 'Demo for iOS · Active 2 hours ago',
+            detail: 'Una for iOS · Active 2 hours ago',
             trailing: Button.ghost(
               size: ButtonSize.sm,
               onPressed: () => showDemoToast(
@@ -691,7 +691,7 @@ class _PersonalisationCard extends StatelessWidget {
     // Any number of them: a grouped list of checkbox rows.
     return ListSection(
       header: _sectionHeader(context, 'Personalisation'),
-      footer: const Text('What Demo may use what it knows about you for.'),
+      footer: const Text('What Una may use what it knows about you for.'),
       children: [
         for (final use in Personalisation.values)
           CheckboxListTile(
