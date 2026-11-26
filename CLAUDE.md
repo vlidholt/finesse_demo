@@ -7,8 +7,10 @@ Written for whoever (or whatever) picks the work up next.
 
 **Demo** is a fictional professional network built entirely from
 [`una`](https://github.com/vlidholt/una) widgets. It replicates the
-designs that `una`'s default look (`StyleTokens.una` on
-`TealColorScheme`, set in Geist) was measured from: four screens (Home,
+designs that `una`'s default style (`StyleTokens.fluid`) was measured
+from, on the designs' own teal palette (`TealColorScheme`, kept here in
+`lib/teal_color_scheme.dart`; the package's default colours are Ocean
+blue), set in Geist: four screens (Home,
 Jobs, Messages, Profile), each in desktop and mobile, light and dark. It
 lived in `una`'s `example/` as "Strand" until it was split out; the
 component library and the theme editor stayed there. This repo's history
@@ -45,13 +47,15 @@ apply here. Read it before changing anything that looks like a workaround.
 
 ## The app
 
-- `lib/main.dart` builds two `ThemeData`s once: the package default in
-  light and dark, with text in Geist
+- `lib/main.dart` builds two `ThemeData`s once: the package's default
+  style on `TealColorScheme`, light and dark, with text in Geist
   (`TextTheme.fromGoogleFont(GoogleFonts.geist)`, a static tear-off, so the
   theme compares equal). It awaits Geist before `runApp`. `UnaApp`'s
   `home` is `DemoShell`.
 - App-wide settings are solidart signals behind disco providers in
-  `lib/app_state.dart`: `themeModeProvider`, and `textScaleProvider`, which
+  `lib/app_state.dart`: `themeModeProvider`, `liquidGlassProvider` (Auto /
+  On / Off, from Settings: Off shows on an iPhone what other platforms get;
+  `themeFor` caches one theme per setting), and `textScaleProvider`, which
   is applied as the `MediaQuery` text scaler in `UnaApp.builder` rather
   than through the theme, so the Settings slider builds no theme.
   `demoProviders` in `main.dart` adds the shell's destination, the session
