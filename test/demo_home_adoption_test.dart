@@ -114,8 +114,9 @@ void main() {
       // The two orders are a radio group now.
       expect(find.byType(MenuRadioItem<FeedSort>), findsNWidgets(2));
       await tester.tap(find.text('Refresh feed'));
+      // The chosen row blinks before the menu closes and its callback runs.
       await tester.pump();
-      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
       expect(_feed(tester).isRefreshing, isTrue);
       await tester.pump(HomeFeedModel.refreshDelay);
       await settleFrames(tester);

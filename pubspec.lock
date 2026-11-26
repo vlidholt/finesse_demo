@@ -538,11 +538,9 @@ packages:
   una:
     dependency: "direct main"
     description:
-      path: "."
-      ref: main
-      resolved-ref: d55c6db5c8c0dd377963b4f91ba03cf7e214620c
-      url: "https://github.com/vlidholt/una.git"
-    source: git
+      path: "/Users/viktor/Projects/finesse/.claude/worktrees/liquid-glass"
+      relative: false
+    source: path
     version: "0.1.0"
   vector_math:
     dependency: transitive
