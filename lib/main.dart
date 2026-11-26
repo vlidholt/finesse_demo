@@ -97,7 +97,7 @@ class App extends StatelessWidget {
           final themeMode = themeModeProvider.of(context).value;
           final textScale = textScaleProvider.of(context).value;
           return UnaApp(
-            title: 'Demo',
+            title: 'Una',
             debugShowCheckedModeBanner: false,
             themeMode: themeMode,
             theme: appTheme,

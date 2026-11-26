@@ -13,7 +13,7 @@ import 'package:una_demo/screens/profile_screen.dart';
 import 'package:una_demo/screens/search_screen.dart';
 import 'package:una_demo/session.dart';
 import 'package:una_demo/widgets/compose_dialog.dart';
-import 'package:una_demo/widgets/demo_logo.dart';
+import 'package:una_demo/widgets/una_logo.dart';
 import 'package:una_demo/widgets/demo_metrics.dart';
 import 'package:una_demo/widgets/person_avatar.dart';
 import 'package:una_demo/widgets/search_bar.dart';
@@ -277,8 +277,8 @@ class _BarStart extends StatelessWidget {
   Widget build(BuildContext context) {
     // The gap the app bar itself puts between a leading widget and a title.
     final gap = (Theme.of(context).appBarTheme.gap ?? 24) - 4;
-    final logoWidth = DemoLogo.widthOf(context);
-    final markWidth = DemoLogo.widthOf(context, showWordmark: false);
+    final logoWidth = UnaLogo.widthOf(context);
+    final markWidth = UnaLogo.widthOf(context, showWordmark: false);
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -290,7 +290,7 @@ class _BarStart extends StatelessWidget {
         return Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            DemoLogo(onPressed: onLogoPressed, showWordmark: showWordmark),
+            UnaLogo(onPressed: onLogoPressed, showWordmark: showWordmark),
             if (searchBesideLogo || searchBesideMark) ...[
               Gap.raw(gap),
               const Flexible(child: DemoSearchBar()),
@@ -352,7 +352,7 @@ class _MobileAppBar extends StatelessWidget {
 
     return AppBar(
       actionsGap: 0,
-      leading: DemoLogo(onPressed: () => onSelected(DemoDestination.home)),
+      leading: UnaLogo(onPressed: () => onSelected(DemoDestination.home)),
       actions: [
         IconButton(
           icon: const PhosphorIcon(PhosphorIconsRegular.magnifyingGlass),

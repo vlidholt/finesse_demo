@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
 import 'package:una_demo/navigation.dart';
 import 'package:una_demo/screens/search_screen.dart';
 import 'package:una_demo/widgets/home_post_comments.dart';
@@ -294,8 +295,11 @@ void main() {
     testWidgets('does not open the search page under a dialog when the bar '
         'is collapsed to its magnifier', (tester) async {
       // Wide enough for the desktop bar with its labelled destinations,
-      // too narrow for the field beside them.
+      // and, with text a little larger than the platform's, too narrow for
+      // the field beside them.
       await pumpApp(tester, size: const Size(1024, 900));
+      textScaleProvider.of(tester.element(_bar)).value = 1.15;
+      await settle(tester);
       expect(find.byType(SearchField), findsNothing);
       expect(_bar, findsOneWidget);
 

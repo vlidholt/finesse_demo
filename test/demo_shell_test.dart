@@ -11,7 +11,7 @@ import 'package:una_demo/screens/notifications_screen.dart';
 import 'package:una_demo/screens/profile_screen.dart';
 import 'package:una_demo/screens/search_screen.dart';
 import 'package:una_demo/session.dart';
-import 'package:una_demo/widgets/demo_logo.dart';
+import 'package:una_demo/widgets/una_logo.dart';
 import 'package:una_demo/widgets/person_avatar.dart';
 
 import 'support.dart';
@@ -53,8 +53,8 @@ void main() {
       expect(find.byType(BottomNavigationBar), findsNothing);
 
       // Logo, search, the five destinations with their unread counts.
-      expect(inAppBar(find.byType(DemoLogo)), findsOneWidget);
-      expect(find.text('demo'), findsOneWidget);
+      expect(inAppBar(find.byType(UnaLogo)), findsOneWidget);
+      expect(find.text('una'), findsOneWidget);
       expect(inAppBar(find.byType(SearchField)), findsOneWidget);
       expect(find.text('Search people, posts, jobs'), findsOneWidget);
       // The key cap names the platform's chord: Ctrl K off Apple's.
@@ -117,7 +117,7 @@ void main() {
       );
 
       // The logo goes home.
-      await tapAndSettle(tester, find.byType(DemoLogo));
+      await tapAndSettle(tester, find.byType(UnaLogo));
       expect(destination(tester), DemoDestination.home);
       expect(find.byType(HomeScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
@@ -339,8 +339,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('search is reachable at every width: the field, then a '
+    testWidgets('search is reachable at every width: the field or a '
         'magnifier in the bar', (tester) async {
+      double? magnifierAt;
       for (final width in [
         1280.0,
         1100.0,
@@ -351,6 +352,15 @@ void main() {
         768.0,
       ]) {
         await pumpApp(tester, size: Size(width, 800));
+        magnifierAt ??=
+            inAppBar(
+              find.widgetWithIcon(
+                IconButton,
+                PhosphorIconsRegular.magnifyingGlass,
+              ),
+            ).hitTestable().evaluate().isEmpty
+            ? null
+            : width;
         // Either the field itself or the magnifier that opens the page, and
         // never both.
         final field = inAppBar(find.byType(SearchField)).hitTestable();
@@ -368,9 +378,11 @@ void main() {
         expect(tester.takeException(), isNull, reason: 'at $width');
       }
 
-      // Where the top bar is at its narrowest the field is a magnifier,
-      // which opens the search page.
-      await pumpApp(tester, size: const Size(1024, 800));
+      // Where the top bar is too narrow for the field it is a magnifier,
+      // which opens the search page. (With the short wordmark the field
+      // fits at every desktop width the designs cover.)
+      if (magnifierAt == null) return;
+      await pumpApp(tester, size: Size(magnifierAt, 800));
       await tapAndSettle(
         tester,
         inAppBar(
@@ -385,7 +397,7 @@ void main() {
   });
 
   group('on a phone (390x844)', () {
-    testWidgets('the app opens on Demo with the bottom navigation', (
+    testWidgets('the app opens on Una with the bottom navigation', (
       tester,
     ) async {
       await pumpApp(tester, size: mobileSize);
@@ -396,7 +408,7 @@ void main() {
       expect(find.byType(NavigationBar), findsNothing);
 
       // The app bar: logo, then search, notifications (12), messages (2).
-      expect(inAppBar(find.byType(DemoLogo)), findsOneWidget);
+      expect(inAppBar(find.byType(UnaLogo)), findsOneWidget);
       expect(find.byType(SearchField), findsNothing);
       expect(
         inAppBar(find.byIcon(PhosphorIconsRegular.magnifyingGlass)),

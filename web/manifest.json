@@ -1,11 +1,11 @@
 {
-    "name": "Demo",
-    "short_name": "Demo",
+    "name": "Una",
+    "short_name": "Una",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0F766E",
     "theme_color": "#0F766E",
-    "description": "Demo, a fictional professional network built with una.",
+    "description": "Una, a fictional professional network: the demo app of the una Flutter package.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
