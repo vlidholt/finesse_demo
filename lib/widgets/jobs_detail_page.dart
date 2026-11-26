@@ -55,7 +55,7 @@ class JobDetailPage extends StatelessWidget {
             title: Text(job.company.name),
             actionsGap: 0,
             actions: [
-              IconButton.ghost(
+              IconButton(
                 icon: PhosphorIcon(
                   saved
                       ? PhosphorIconsFill.bookmarkSimple
@@ -67,7 +67,7 @@ class JobDetailPage extends StatelessWidget {
                 semanticLabel: saved ? 'Remove from saved jobs' : 'Save job',
                 onPressed: () => state.toggleSaved(job),
               ),
-              IconButton.ghost(
+              IconButton(
                 icon: const PhosphorIcon(PhosphorIconsRegular.export),
                 semanticLabel: 'Share job',
                 onPressed: () => copyLink(context, 'demo.app/jobs/${job.id}'),

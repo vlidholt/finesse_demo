@@ -304,8 +304,10 @@ class _BarStart extends StatelessWidget {
 
 /// The phone's app bar: the logo, then search, notifications and messages.
 ///
-/// The designs inset it 16 at the start but only 8 at the end, so the last
-/// 44-point button's glyph — not its box — lines up with the page margin.
+/// The buttons name no variant: the bar gives them its own look — bare
+/// glyphs on its surface, the last one's glyph (not its box) on the page
+/// margin, as in the designs; plain icons on one capsule of Liquid Glass,
+/// whose edge is on the margin.
 class _MobileAppBar extends StatelessWidget {
   const _MobileAppBar({
     required this.destination,
@@ -322,10 +324,6 @@ class _MobileAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final layout = theme.layoutTheme;
-    final start = (layout.pagePadding ?? const EdgeInsets.all(16))
-        .resolve(Directionality.of(context))
-        .left;
 
     Widget action({
       required DemoDestination target,
@@ -341,7 +339,7 @@ class _MobileAppBar extends StatelessWidget {
         overhang: 0,
         offset: const Offset(0, 2),
         semanticLabel: '$count unread',
-        child: IconButton.ghost(
+        child: IconButton(
           icon: PhosphorIcon(selected ? selectedIcon : icon),
           style: ButtonTheme(
             foregroundColor: selected ? theme.colorScheme.tint : null,
@@ -352,18 +350,11 @@ class _MobileAppBar extends StatelessWidget {
       );
     }
 
-    // On Liquid Glass the buttons share a capsule, whose edge — not a
-    // glyph — lines up with the page margin.
-    final liquid = LiquidGlass.isActive(context, theme.appBarTheme.liquidGlass);
     return AppBar(
-      padding: EdgeInsetsDirectional.only(
-        start: start,
-        end: liquid ? start : theme.gap(GapSize.sm),
-      ),
       actionsGap: 0,
       leading: DemoLogo(onPressed: () => onSelected(DemoDestination.home)),
       actions: [
-        IconButton.ghost(
+        IconButton(
           icon: const PhosphorIcon(PhosphorIconsRegular.magnifyingGlass),
           semanticLabel: 'Search',
           onPressed: () =>

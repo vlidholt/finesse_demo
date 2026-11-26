@@ -20,11 +20,11 @@ import 'package:flutter/widgets.dart';
 /// becomes the screen's app bar. The shell shows no app bar of its own over
 /// the profile on a phone.
 ///
-/// The three buttons are the theme's outline icon buttons — a solid disc
-/// with a hairline — because they have to read on the photograph while the
-/// bar is expanded and on the bar's surface once it has collapsed. On
-/// Liquid Glass they are plain icons on the bar's glass capsules, as on
-/// every other screen's bar.
+/// The three buttons name no variant, so the bar picks it: over its
+/// photograph an outline disc, which reads on the picture while the bar is
+/// expanded and on the bar's surface once it has collapsed; on Liquid
+/// Glass plain icons on the bar's capsules, as on every other screen's
+/// bar.
 class ProfileMobileBar extends StatelessWidget {
   const ProfileMobileBar({
     required this.onBack,
@@ -45,22 +45,15 @@ class ProfileMobileBar extends StatelessWidget {
     const person = ProfileData.person;
     // The buttons sit 12 from the edges, inside the page's 16 margin.
     final inset = theme.gap(GapSize.md);
-    final liquid = LiquidGlass.isActive(context, theme.appBarTheme.liquidGlass);
     IconButton button({
       required Widget icon,
       required String semanticLabel,
       required VoidCallback onPressed,
-    }) => liquid
-        ? IconButton.ghost(
-            icon: icon,
-            semanticLabel: semanticLabel,
-            onPressed: onPressed,
-          )
-        : IconButton.outline(
-            icon: icon,
-            semanticLabel: semanticLabel,
-            onPressed: onPressed,
-          );
+    }) => IconButton(
+      icon: icon,
+      semanticLabel: semanticLabel,
+      onPressed: onPressed,
+    );
 
     // The bar follows the scroll in paint, so every frame of its collapse
     // paints it again. Its buttons do not change with it: each is a layer
