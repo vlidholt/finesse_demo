@@ -1,7 +1,7 @@
-import 'package:finesse_demo/assets.dart';
-import 'package:finesse_demo/data.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/assets.dart';
+import 'package:una_demo/data.dart';
 
 /// The three lists the home feed's segmented control switches between.
 enum HomeFeed {

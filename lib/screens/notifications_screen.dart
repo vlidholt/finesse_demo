@@ -1,14 +1,14 @@
-import 'package:finesse_demo/data/notifications_data.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/home_trending_card.dart';
-import 'package:finesse_demo/widgets/notifications_controller.dart';
-import 'package:finesse_demo/widgets/notifications_list.dart';
-import 'package:finesse_demo/widgets/notifications_rail.dart';
-import 'package:finesse_demo/widgets/settings_controller.dart';
-import 'package:finesse_demo/widgets/settings_links.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/notifications_data.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/home_trending_card.dart';
+import 'package:una_demo/widgets/notifications_controller.dart';
+import 'package:una_demo/widgets/notifications_list.dart';
+import 'package:una_demo/widgets/notifications_rail.dart';
+import 'package:una_demo/widgets/settings_controller.dart';
+import 'package:una_demo/widgets/settings_links.dart';
 
 /// The Notifications destination of the Demo shell.
 ///
@@ -80,7 +80,7 @@ class NotificationsScreen extends StatelessWidget {
               ? ((full - width) / (full - least)).clamp(0.0, 1.0)
               : 0.0;
 
-          return FinesseColumn(
+          return UnaColumn(
             gap: GapSize.lg,
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -118,7 +118,7 @@ class NotificationsScreen extends StatelessWidget {
                         ),
                       ),
                     Expanded(
-                      child: FinesseColumn(
+                      child: UnaColumn(
                         gap: GapSize.lg,
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -133,7 +133,7 @@ class NotificationsScreen extends StatelessWidget {
                         width:
                             _rightWidth -
                             (_rightWidth - _rightMinWidth) * squeeze,
-                        child: const FinesseColumn(
+                        child: const UnaColumn(
                           gap: GapSize.lg,
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.stretch,

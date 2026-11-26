@@ -1,6 +1,6 @@
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
 
 /// The seal shown after a verified person's name, in the theme's tint.
 ///

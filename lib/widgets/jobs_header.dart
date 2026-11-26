@@ -1,9 +1,9 @@
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/widgets/jobs_state.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/jobs_state.dart';
 
 /// The page title. A desktop adds the subtitle and the two page actions;
 /// a phone shows the title alone.
@@ -40,7 +40,7 @@ class JobsHeader extends StatelessWidget {
             ),
           ],
         ),
-        FinesseRow(
+        UnaRow(
           gap: GapSize.sm,
           mainAxisSize: MainAxisSize.min,
           children: [

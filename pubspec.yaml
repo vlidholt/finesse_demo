@@ -1,5 +1,5 @@
-name: finesse_demo
-description: "Demo, a fictional professional network built with finesse."
+name: una_demo
+description: "Demo, a fictional professional network built with una."
 
 publish_to: "none"
 
@@ -12,12 +12,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # finesse is not on pub.dev. CI and the Pages build take it from main;
+  # una is not on pub.dev. CI and the Pages build take it from main;
   # for local work against a checkout beside this one, see
   # pubspec_overrides.yaml in the README.
-  finesse:
+  una:
     git:
-      url: https://github.com/vlidholt/finesse.git
+      url: https://github.com/vlidholt/una.git
       ref: main
   flutter_solidart: ^2.1.0
   google_fonts: ^8.2.1

@@ -1,11 +1,11 @@
-import 'package:finesse_demo/data/profile_data.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/profile_common.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/verified_badge.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/profile_data.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/profile_common.dart';
+import 'package:una_demo/widgets/verified_badge.dart';
 
 // The designs draw the profile with About selected. These are the other
 // tabs' contents, built from the same people, photographs and wording.
@@ -36,7 +36,7 @@ class _ProfilePostCardState extends State<ProfilePostCard> {
         rowMainAxisSize: MainAxisSize.max,
         columnCrossAxisAlignment: CrossAxisAlignment.stretch,
       ),
-      child: FinesseColumn(
+      child: UnaColumn(
         gap: GapSize.md,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -79,7 +79,7 @@ class _ProfilePostCardState extends State<ProfilePostCard> {
                 ),
               ),
             ),
-          FinesseRow(
+          UnaRow(
             gap: GapSize.xs,
             children: [
               Button.ghost(
@@ -125,7 +125,7 @@ class ProfileActivityCard extends StatelessWidget {
     final title = theme.textTheme.p.copyWith(fontWeight: FontWeight.w500);
     return ProfileSection(
       title: 'Activity',
-      child: FinesseColumn(
+      child: UnaColumn(
         gap: GapSize.lg,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

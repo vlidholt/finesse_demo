@@ -1,11 +1,11 @@
-import 'package:finesse_demo/data/network_data.dart';
-import 'package:finesse_demo/widgets/network_controller.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse_demo/widgets/demo_previews.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/network_data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/demo_previews.dart';
+import 'package:una_demo/widgets/network_controller.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
 
 /// The invitations waiting for an answer, each with "Ignore" and "Accept".
 ///
@@ -145,7 +145,7 @@ class _InvitationRow extends StatelessWidget {
     final person = invitation.person;
     void open() => showPersonPreview(context, person);
 
-    final buttons = FinesseRow(
+    final buttons = UnaRow(
       gap: GapSize.sm,
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -189,7 +189,7 @@ class _InvitationRow extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            FinesseRow(
+            UnaRow(
               gap: GapSize.md,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

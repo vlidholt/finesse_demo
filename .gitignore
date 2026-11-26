@@ -10,7 +10,7 @@ coverage/
 .vscode/settings.json
 .DS_Store
 
-# Local override that points finesse at a checkout beside this one.
+# Local override that points una at a checkout beside this one.
 pubspec_overrides.yaml
 
 # Platform folders other than web are regenerated on demand

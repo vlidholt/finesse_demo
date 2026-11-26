@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:finesse_demo/data/messages_data.dart';
-import 'package:finesse_demo/widgets/messages_assistant.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una_demo/data/messages_data.dart';
+import 'package:una_demo/widgets/messages_assistant.dart';
 
 /// The state of the user's messages: which conversation is open, the list's
 /// filter and search, and what has been sent, received and read since the

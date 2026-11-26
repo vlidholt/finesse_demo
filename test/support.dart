@@ -1,8 +1,8 @@
-import 'package:finesse_demo/demo_shell.dart';
-import 'package:finesse_demo/main.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:una_demo/demo_shell.dart';
+import 'package:una_demo/main.dart';
 
 /// The designs' two canvases.
 const desktopSize = Size(1440, 900);

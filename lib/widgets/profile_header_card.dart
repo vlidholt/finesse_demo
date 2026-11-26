@@ -1,15 +1,15 @@
-import 'package:finesse_demo/assets.dart';
-import 'package:finesse_demo/data/profile_data.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/profile_common.dart';
-import 'package:finesse_demo/widgets/saved_items_sheet.dart';
-import 'package:finesse_demo/widgets/settings_controller.dart';
-import 'package:finesse_demo/widgets/settings_links.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/verified_badge.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/assets.dart';
+import 'package:una_demo/data/profile_data.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/profile_common.dart';
+import 'package:una_demo/widgets/saved_items_sheet.dart';
+import 'package:una_demo/widgets/settings_controller.dart';
+import 'package:una_demo/widgets/settings_links.dart';
+import 'package:una_demo/widgets/verified_badge.dart';
 
 /// The desktop profile's first card: the cover photo, who the person is, the
 /// status tiles and the tab bar that switches the sections below it.
@@ -130,7 +130,7 @@ class _Identity extends StatelessWidget {
             const Spacer(),
             Padding(
               padding: EdgeInsets.only(bottom: layout.gap(GapSize.sm)),
-              child: FinesseRow(
+              child: UnaRow(
                 gap: GapSize.sm,
                 mainAxisSize: MainAxisSize.min,
                 children: [

@@ -1,19 +1,19 @@
 import 'dart:async';
 
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/data/network_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/search_screen.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/profile_common.dart';
-import 'package:finesse_demo/widgets/settings_controller.dart';
-import 'package:finesse_demo/widgets/settings_links.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/data/network_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/search_screen.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/profile_common.dart';
+import 'package:una_demo/widgets/settings_controller.dart';
+import 'package:una_demo/widgets/settings_links.dart';
 
 /// The small answers Demo gives to everything the designs drew but did
 /// not design a destination for: a story, an article, "Send", "Share",
@@ -364,7 +364,7 @@ class _SendDialogState extends State<_SendDialog> {
           child: const Text('Done'),
         ),
       ],
-      child: FinesseColumn(
+      child: UnaColumn(
         gap: GapSize.md,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -572,7 +572,7 @@ void openFooterLink(BuildContext context, String link) {
             title: Text(link == 'About' ? 'About Demo' : link),
             description: const Text(
               'Demo is a fictional professional network. It exists to '
-              'show finesse, the Flutter component library every screen '
+              'show una, the Flutter component library every screen '
               'here is built from: the people, companies, jobs and posts '
               'are invented, and nothing you do is sent anywhere.',
             ),

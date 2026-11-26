@@ -1,14 +1,14 @@
-import 'package:finesse_demo/data/messages_data.dart';
-import 'package:finesse_demo/screens/messages_screen.dart';
-import 'package:finesse_demo/widgets/messages_assistant.dart';
-import 'package:finesse_demo/widgets/messages_composer.dart';
-import 'package:finesse_demo/widgets/messages_conversation.dart';
-import 'package:finesse_demo/widgets/messages_conversation_list.dart';
-import 'package:finesse_demo/widgets/messages_details_pane.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/messages_data.dart';
+import 'package:una_demo/screens/messages_screen.dart';
+import 'package:una_demo/widgets/messages_assistant.dart';
+import 'package:una_demo/widgets/messages_composer.dart';
+import 'package:una_demo/widgets/messages_conversation.dart';
+import 'package:una_demo/widgets/messages_conversation_list.dart';
+import 'package:una_demo/widgets/messages_details_pane.dart';
 
 import 'demo_support.dart';
 
@@ -33,7 +33,7 @@ Future<void> pumpMessages(
     // one answers the way the test asked.
     DemoSessionHost(
       replies: replies,
-      child: FinesseApp(
+      child: UnaApp(
         theme: ThemeData(brightness: brightness),
         home: const Scaffold(
           appBar: AppBar(title: Text('demo')),

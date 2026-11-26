@@ -1,10 +1,10 @@
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/widgets/jobs_filters_dialog.dart';
-import 'package:finesse_demo/widgets/jobs_state.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/jobs_filters_dialog.dart';
+import 'package:una_demo/widgets/jobs_state.dart';
 
 /// The search box at the top of the Jobs screen.
 ///
@@ -57,7 +57,7 @@ class JobsSearchCard extends StatelessWidget {
         // around the two fields.
         padding: EdgeInsets.all(theme.gap(GapSize.sm)),
         shadows: theme.cardTheme.shadows ?? const [],
-        child: FinesseColumn(
+        child: UnaColumn(
           gap: GapSize.sm,
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -149,7 +149,7 @@ class _SearchInput extends StatelessWidget {
         constraints: tall && tallHeight != null
             ? BoxConstraints(minHeight: tallHeight)
             : null,
-        decoration: FinesseDecoration(color: colors.card),
+        decoration: UnaDecoration(color: colors.card),
         placeholder: Text(
           placeholder,
           maxLines: 1,

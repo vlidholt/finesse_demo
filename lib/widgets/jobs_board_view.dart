@@ -1,10 +1,10 @@
 import 'package:disco/disco.dart';
-import 'package:finesse_demo/data/applications_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_solidart/flutter_solidart.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/applications_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
 
 /// The two sides of the Jobs destination.
 enum JobsView {

@@ -1,9 +1,9 @@
-import 'package:finesse_demo/data/profile_data.dart';
-import 'package:finesse_demo/widgets/profile_common.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/profile_data.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/profile_common.dart';
 
 /// The "Analytics" card: three numbers only the profile's owner sees.
 class ProfileAnalyticsCard extends StatelessWidget {
@@ -28,7 +28,7 @@ class ProfileAnalyticsCard extends StatelessWidget {
         ],
       ),
       child: IntrinsicHeight(
-        child: FinesseRow(
+        child: UnaRow(
           gap: GapSize.md,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -191,7 +191,7 @@ class ProfileFeaturedCard extends StatelessWidget {
       title: 'Featured',
       trailing: ProfileTextLink('See all', onPressed: onSeeAll),
       child: IntrinsicHeight(
-        child: FinesseRow(
+        child: UnaRow(
           gap: GapSize.md,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

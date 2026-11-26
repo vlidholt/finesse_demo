@@ -1,10 +1,10 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/profile_data.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/profile_common.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/profile_data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/profile_common.dart';
 
 /// The title of a setting, a person or a group: body text, semibold.
 TextStyle _rowTitleStyle(ThemeData theme) =>
@@ -69,7 +69,7 @@ class ProfilePeopleCard extends StatelessWidget {
     final theme = Theme.of(context);
     return ProfileSection(
       title: 'People also viewed',
-      child: FinesseColumn(
+      child: UnaColumn(
         gap: GapSize.lg,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -145,7 +145,7 @@ class ProfileGroupsCard extends StatelessWidget {
     final theme = Theme.of(context);
     return ProfileSection(
       title: 'Your groups',
-      child: FinesseColumn(
+      child: UnaColumn(
         gap: GapSize.md,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

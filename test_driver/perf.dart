@@ -4,10 +4,10 @@ import 'dart:js_interop';
 import 'dart:js_interop_unsafe';
 import 'dart:ui';
 
-import 'package:finesse_demo/demo_shell.dart';
-import 'package:finesse_demo/main.dart' as app;
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una_demo/demo_shell.dart';
+import 'package:una_demo/main.dart' as app;
 
 /// Entrypoint for measuring frame times of a web build from the browser:
 ///
@@ -15,14 +15,14 @@ import 'package:flutter/widgets.dart';
 /// flutter build web --release -t test_driver/perf.dart
 /// ```
 ///
-/// It runs the app unchanged and puts a `finessePerf` object on `window`:
+/// It runs the app unchanged and puts a `unaPerf` object on `window`:
 ///
-/// * `await finessePerf.scroll(pixelsPerSecond, seconds)` scrolls the page
+/// * `await unaPerf.scroll(pixelsPerSecond, seconds)` scrolls the page
 ///   on screen down and back up and returns the frame statistics as JSON;
-/// * `finessePerf.start()` … `await finessePerf.stop()` brackets anything
+/// * `unaPerf.start()` … `await unaPerf.stop()` brackets anything
 ///   else — a tap, a menu, typing;
-/// * `finessePerf.goTo('jobs')` switches the Demo destination and
-///   `finessePerf.toggleTheme()` the brightness.
+/// * `unaPerf.goTo('jobs')` switches the Demo destination and
+///   `unaPerf.toggleTheme()` the brightness.
 ///
 /// The numbers are the engine's own frame timings (`FrameTiming`): the
 /// time spent building, the time spent rasterising, and the interval
@@ -34,7 +34,7 @@ Future<void> main() async {
   SchedulerBinding.instance.addTimingsCallback((timings) {
     if (_recording) _timings.addAll(timings);
   });
-  globalContext['finessePerf'] = JSObject()
+  globalContext['unaPerf'] = JSObject()
     ..['start'] = _start.toJS
     ..['stop'] = (() => _stop().then((stats) => stats.toJS).toJS).toJS
     ..['scroll'] = ((JSNumber speed, JSNumber seconds) => _scroll(

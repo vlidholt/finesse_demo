@@ -1,9 +1,9 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/messages_data.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/messages_data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
 
 /// The designs' tight gap — a status dot and its label, two filter chips, a
 /// name after its avatar's own gap — between the theme's `xs` and `sm`.

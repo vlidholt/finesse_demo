@@ -1,14 +1,14 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/widgets/home_feed_scope.dart';
-import 'package:finesse_demo/widgets/home_pieces.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/home_feed_scope.dart';
+import 'package:una_demo/widgets/home_pieces.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
 
 /// The thread under a desktop post: comments with their replies, the
 /// "View more replies" link and the field for a new comment.
@@ -142,7 +142,7 @@ class _HomePostCommentsState extends State<HomePostComments> {
                     end: theme.gap(GapSize.xs),
                   ),
                   gap: theme.gap(GapSize.xs),
-                  trailing: FinesseRow(
+                  trailing: UnaRow(
                     gap: GapSize.xs,
                     mainAxisSize: MainAxisSize.min,
                     children: [

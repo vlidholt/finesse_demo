@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/home_data.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/home_data.dart';
 
 /// The home feed's state: which list is showing, how it is sorted, which
 /// posts have arrived since the app opened, what the signed-in user has

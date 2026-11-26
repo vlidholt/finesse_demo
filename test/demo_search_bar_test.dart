@@ -1,12 +1,12 @@
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/search_screen.dart';
-import 'package:finesse_demo/widgets/home_post_comments.dart';
-import 'package:finesse_demo/widgets/search_bar.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/search_screen.dart';
+import 'package:una_demo/widgets/home_post_comments.dart';
+import 'package:una_demo/widgets/search_bar.dart';
 
 import 'support.dart';
 

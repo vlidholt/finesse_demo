@@ -1,10 +1,10 @@
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/widgets/home_pieces.dart';
-import 'package:finesse_demo/widgets/settings_controller.dart';
-import 'package:finesse_demo/widgets/settings_links.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/home_pieces.dart';
+import 'package:una_demo/widgets/settings_controller.dart';
+import 'package:una_demo/widgets/settings_links.dart';
 
 /// The left rail's "Manage notifications": the three switches people reach
 /// for most, and a link to the rest.
@@ -69,7 +69,7 @@ class NotificationsManageCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            FinesseColumn(
+            UnaColumn(
               gap: GapSize.lg,
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -148,7 +148,7 @@ class NotificationsWeekCard extends StatelessWidget {
         onPressed: () => context.goTo(DemoDestination.profile),
         style: theme.textTheme.small.copyWith(color: scheme.tint),
       ),
-      child: FinesseColumn(
+      child: UnaColumn(
         gap: GapSize.md,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

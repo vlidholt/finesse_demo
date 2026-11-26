@@ -1,13 +1,13 @@
-import 'package:finesse_demo/data/search_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/search_screen.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/search_results.dart';
-import 'package:finesse_demo/widgets/demo_previews.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/search_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/search_screen.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_previews.dart';
+import 'package:una_demo/widgets/search_results.dart';
 
 /// What choosing a search result does, from [context]: a person or a
 /// company opens its preview, a job goes to Jobs, a post to the feed — or
@@ -281,7 +281,7 @@ class _DemoSearchBarState extends State<DemoSearchBar> {
             ? Kbd(
                 SearchField.shortcutLabel,
                 backgroundColor: const Color(0x00000000),
-                border: FinesseBorder.all(
+                border: UnaBorder.all(
                   color: theme.colorScheme.borderStrong,
                   width: 1,
                   borderRadius: theme.radii.sm,

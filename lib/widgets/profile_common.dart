@@ -1,10 +1,10 @@
-import 'package:finesse_demo/data/profile_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/widgets/settings_controller.dart';
-import 'package:finesse_demo/widgets/settings_links.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/profile_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/settings_controller.dart';
+import 'package:una_demo/widgets/settings_links.dart';
 
 /// A card of the profile: a heading row, then content.
 ///

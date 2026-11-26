@@ -1,11 +1,11 @@
 import 'package:disco/disco.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_solidart/flutter_solidart.dart';
+import 'package:una/una.dart';
 
 /// The app-wide settings: light or dark, and the text size.
 ///
-/// Both are provided above `FinesseApp` (see `App` in `main.dart`), so every
+/// Both are provided above `UnaApp` (see `App` in `main.dart`), so every
 /// route — including full-screen ones a screen pushes — can read them. The
 /// Settings screen writes them, and so does the shell's dark-mode button.
 

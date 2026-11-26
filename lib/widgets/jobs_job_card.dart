@@ -1,9 +1,9 @@
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/widgets/jobs_company_logo.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/jobs_company_logo.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
 
 /// A listing in the results list: a tappable [Card], selected while it is
 /// the one the detail pane shows. The bookmark inside it is a button of its
@@ -41,7 +41,7 @@ class JobCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FinesseRow(
+              UnaRow(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 gap: GapSize.sm,
                 children: [
@@ -174,7 +174,7 @@ class JobTag extends StatelessWidget {
       // No badge variant is green: the success pair goes on by hand.
       backgroundColor: colors.successMuted,
       foregroundColor: colors.success,
-      child: FinesseRow(
+      child: UnaRow(
         gap: GapSize.xs,
         mainAxisSize: MainAxisSize.min,
         children: [

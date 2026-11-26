@@ -1,9 +1,9 @@
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/widgets/jobs_detail.dart';
-import 'package:finesse_demo/widgets/jobs_state.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/jobs_detail.dart';
+import 'package:una_demo/widgets/jobs_state.dart';
 
 /// A job's detail as a page of its own: what a phone — or a window too
 /// narrow for the two-pane layout — pushes when a job card is tapped.

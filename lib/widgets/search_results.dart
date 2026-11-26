@@ -1,16 +1,16 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/data/search_data.dart';
-import 'package:finesse_demo/widgets/home_pieces.dart';
-import 'package:finesse_demo/widgets/jobs_job_card.dart';
-import 'package:finesse_demo/widgets/network_controller.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/search_history.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/data/search_data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/home_pieces.dart';
+import 'package:una_demo/widgets/jobs_job_card.dart';
+import 'package:una_demo/widgets/network_controller.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/search_history.dart';
 
 /// What happens when a search result is chosen. The host — the app bar's
 /// dropdown or the search page — closes itself and goes there.

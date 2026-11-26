@@ -1,8 +1,8 @@
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/data/applications_data.dart';
-import 'package:finesse_demo/widgets/jobs_board_controller.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/applications_data.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/widgets/jobs_board_controller.dart';
 
 /// The four summary tiles: one row while each tile has room for its label,
 /// two rows of two below that.
@@ -51,14 +51,14 @@ class JobsStats extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth >= _singleRowMinWidth) {
-          return FinesseRow(gap: GapSize.md, children: tiles);
+          return UnaRow(gap: GapSize.md, children: tiles);
         }
-        return FinesseColumn(
+        return UnaColumn(
           gap: GapSize.md,
           mainAxisSize: MainAxisSize.min,
           children: [
-            FinesseRow(gap: GapSize.md, children: tiles.sublist(0, 2)),
-            FinesseRow(gap: GapSize.md, children: tiles.sublist(2)),
+            UnaRow(gap: GapSize.md, children: tiles.sublist(0, 2)),
+            UnaRow(gap: GapSize.md, children: tiles.sublist(2)),
           ],
         );
       },

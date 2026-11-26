@@ -1,10 +1,10 @@
-import 'package:finesse_demo/data/messages_data.dart';
-import 'package:finesse_demo/widgets/messages_common.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/messages_data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/messages_common.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
 
 /// The measurements of a thread that the designs change between the desktop
 /// pane and the full-screen conversation.
@@ -148,7 +148,7 @@ class _DayDivider extends StatelessWidget {
     final theme = Theme.of(context);
     return Padding(
       padding: EdgeInsets.symmetric(vertical: theme.gap(GapSize.xs)),
-      child: FinesseRow(
+      child: UnaRow(
         gap: GapSize.md,
         children: [
           const Expanded(child: Divider()),
@@ -507,7 +507,7 @@ class _Receipt extends StatelessWidget {
     final theme = Theme.of(context);
     return Align(
       alignment: AlignmentDirectional.centerEnd,
-      child: FinesseRow(
+      child: UnaRow(
         gap: GapSize.xs,
         mainAxisSize: MainAxisSize.min,
         children: [

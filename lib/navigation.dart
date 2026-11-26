@@ -1,7 +1,7 @@
 import 'package:disco/disco.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_solidart/flutter_solidart.dart';
+import 'package:una/una.dart';
 
 /// The places the Demo shell can show.
 ///
@@ -51,5 +51,5 @@ extension DemoRoutes on BuildContext {
   /// The page should be a `Scaffold` with its own `AppBar`; it pops itself
   /// with `Navigator.of(context).pop()`.
   Future<T?> pushFullScreen<T>(WidgetBuilder builder) =>
-      Navigator.of(this).push<T>(FinessePageRoute<T>(builder: builder));
+      Navigator.of(this).push<T>(UnaPageRoute<T>(builder: builder));
 }

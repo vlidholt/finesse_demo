@@ -1,4 +1,4 @@
-# Working notes for `finesse_demo`
+# Working notes for `una_demo`
 
 Things that are true about this repo and are expensive to rediscover.
 Written for whoever (or whatever) picks the work up next.
@@ -6,58 +6,58 @@ Written for whoever (or whatever) picks the work up next.
 ## What this is
 
 **Demo** is a fictional professional network built entirely from
-[`finesse`](https://github.com/vlidholt/finesse) widgets. It replicates the
-designs that `finesse`'s default look (`StyleTokens.finesse` on
+[`una`](https://github.com/vlidholt/una) widgets. It replicates the
+designs that `una`'s default look (`StyleTokens.una` on
 `TealColorScheme`, set in Geist) was measured from: four screens (Home,
 Jobs, Messages, Profile), each in desktop and mobile, light and dark. It
-lived in `finesse`'s `example/` as "Strand" until it was split out; the
+lived in `una`'s `example/` as "Strand" until it was split out; the
 component library and the theme editor stayed there. This repo's history
-starts at the split. What came before is in `finesse`'s history under
+starts at the split. What came before is in `una`'s history under
 `example/lib/strand/`.
 
-It deploys to <https://vlidholt.github.io/finesse_demo/> on every push to
+It deploys to <https://vlidholt.github.io/una_demo/> on every push to
 `main` (`.github/workflows/deploy-pages.yaml`).
 
-`finesse`'s own `CLAUDE.md` is the reference for the package: its theme
+`una`'s own `CLAUDE.md` is the reference for the package: its theme
 architecture, motion, glass, overlays, Flutter gotchas and test habits all
 apply here. Read it before changing anything that looks like a workaround.
 
-## Depending on finesse
+## Depending on una
 
-- `pubspec.yaml` takes `finesse` from git, `main` of `vlidholt/finesse`,
+- `pubspec.yaml` takes `una` from git, `main` of `vlidholt/una`,
   and `pubspec.lock` pins the commit. Move it with
-  `flutter pub upgrade finesse`, and commit the lock.
+  `flutter pub upgrade una`, and commit the lock.
 - For local work against a checkout beside this one, a **gitignored**
-  `pubspec_overrides.yaml` points it at `../finesse`:
+  `pubspec_overrides.yaml` points it at `../una`:
 
   ```yaml
   dependency_overrides:
-    finesse:
-      path: ../finesse
+    una:
+      path: ../una
   ```
 
   With the override in place, `pubspec.lock` records a path. Do not commit
   that lock (`git checkout pubspec.lock`, or move the override aside and
   run `flutter pub get`). CI has no override, so a change that needs an
-  unreleased `finesse` change waits until that lands on `finesse`'s `main`.
-- The app uses `finesse`'s public barrel only (`package:finesse/finesse.dart`)
-  and no Material, so there is no `FinesseMaterial` here.
+  unreleased `una` change waits until that lands on `una`'s `main`.
+- The app uses `una`'s public barrel only (`package:una/una.dart`)
+  and no Material, so there is no `UnaMaterial` here.
 
 ## The app
 
 - `lib/main.dart` builds two `ThemeData`s once: the package default in
   light and dark, with text in Geist
   (`TextTheme.fromGoogleFont(GoogleFonts.geist)`, a static tear-off, so the
-  theme compares equal). It awaits Geist before `runApp`. `FinesseApp`'s
+  theme compares equal). It awaits Geist before `runApp`. `UnaApp`'s
   `home` is `DemoShell`.
 - App-wide settings are solidart signals behind disco providers in
   `lib/app_state.dart`: `themeModeProvider`, and `textScaleProvider`, which
-  is applied as the `MediaQuery` text scaler in `FinesseApp.builder` rather
+  is applied as the `MediaQuery` text scaler in `UnaApp.builder` rather
   than through the theme, so the Settings slider builds no theme.
   `demoProviders` in `main.dart` adds the shell's destination, the session
   and the Jobs view. A test that pumps part of the app provides
   `appProviders` and whatever else it needs.
-- There is no theme editor here; it is in `finesse`'s example. To see a
+- There is no theme editor here; it is in `una`'s example. To see a
   screen under another style, a test themes it (the theme-coverage test
   does), or `main.dart` is changed locally.
 - `google_fonts` is the only font source. **Never
@@ -171,7 +171,7 @@ apply here. Read it before changing anything that looks like a workaround.
   the whole phone screen (a conversation, a job's detail) is a *pushed route*
   with its own `Scaffold` + `AppBar`, pushed on the app's navigator over the
   shell.
-- **The form factor follows the window.** `FinesseApp` picks it from the
+- **The form factor follows the window.** `UnaApp` picks it from the
   width, below the theme's `breakpoints.md`; nothing in the app overrides
   it.
 - **Layout rules the screens follow** (keep to them when adding one): sizes
@@ -228,7 +228,7 @@ apply here. Read it before changing anything that looks like a workaround.
   the page that showed it may be gone by the time it is tapped.
 - **Verifying a screen without running the app:** render it to PNG from a
   test (`RepaintBoundary.toImage` inside `tester.runAsync`, Phosphor fonts
-  loaded from `fonts/phosphor/` as `packages/finesse/PhosphorRegular` etc.,
+  loaded from `fonts/phosphor/` as `packages/una/PhosphorRegular` etc.,
   a system TTF as the body font, `debugDisableShadows = false`, every
   `AssetImage` precached) and compare with the design. flutter_test's own
   font is an em-wide box per glyph and overflows labels that fit any real
@@ -241,14 +241,14 @@ What a frame costs on the web is counted by `test/perf_structure_test.dart`
 (backdrop filters, save layers, builds and paints per scroll frame, at rest
 and across a theme switch, per screen at both sizes). It is timed in a
 browser with `flutter build web --release -t test_driver/perf.dart` and
-`await finessePerf.scroll(1200, 2)` in the console;
-`finessePerf.goTo('jobs')` switches the destination and
-`finessePerf.toggleTheme()` the brightness. The browser must be *showing*:
+`await unaPerf.scroll(1200, 2)` in the console;
+`unaPerf.goTo('jobs')` switches the destination and
+`unaPerf.toggleTheme()` the brightness. The browser must be *showing*:
 a hidden pane runs animation at 1 Hz. `FrameTiming.raster` on the web ends
 when commands reach the GPU, so GPU-bound work does not show in it. The
 package's own performance rules (cards do not blur, a scrolling page is a
 layer, something that never stops is painted, not built) are in
-`finesse`'s `CLAUDE.md`.
+`una`'s `CLAUDE.md`.
 
 **Timing on an iPhone needs the JIT.** iOS 27 Safari runs a page served
 over plain http without it (WebKit bug 324968, intended): JavaScript and
@@ -258,8 +258,8 @@ Pages deploy), or on the LAN with Safari's Enhanced Security Heuristics
 feature flag off. With the JIT on, Home scrolled at 59 fps in every top
 bar variant tried; the differences were in late frames (over 17.5 ms): an
 opaque top bar about 5 %, six blur strips about 10 %, a one-pass shader
-blur about 20 %. On the web the glass top bar is therefore finesse's
-solid bar (`finesse`'s `CLAUDE.md`, "Liquid Glass").
+blur about 20 %. On the web the glass top bar is therefore una's
+solid bar (`una`'s `CLAUDE.md`, "Liquid Glass").
 
 ## Testing
 
@@ -273,7 +273,7 @@ solid bar (`finesse`'s `CLAUDE.md`, "Liquid Glass").
   built in, `DemoSessionHost`, `announced` and `completeEasyApply`.
 - A test that checks "nothing overflows" at several sizes pumps a fresh
   tree for each: an overflow is reported once per render object.
-- The `finesse` test notes apply: an overlay needs about 12 × 50 ms before
+- The `una` test notes apply: an overlay needs about 12 × 50 ms before
   a tap, an overlay's element hangs under its anchor
   (`skipOffstage: false`), tests run as Android, and `tester.tap` is a
   touch unless given a mouse.

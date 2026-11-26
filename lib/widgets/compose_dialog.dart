@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/home_feed_scope.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/home_feed_scope.dart';
 
 /// Opens the post composer: what the "Create post" action of the bottom bar
 /// and of the rail, and the home feed's "Start a post" box, lead to.

@@ -1,13 +1,13 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/network_data.dart';
-import 'package:finesse_demo/data/search_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/network_data.dart';
+import 'package:una_demo/data/search_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
 
 /// Opens a short preview of [person]: who they are, how the user knows
 /// them, and the two things to do about it — connect and message.

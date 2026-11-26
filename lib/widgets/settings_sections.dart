@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/profile_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/settings_controller.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_solidart/flutter_solidart.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/profile_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/settings_controller.dart';
 
 /// The cards of one page of Settings.
 ///
@@ -38,7 +38,7 @@ class SettingsSectionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FinesseColumn(
+    return UnaColumn(
       gap: GapSize.lg,
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -611,7 +611,7 @@ class _VisibilityCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // One choice of three: a grouped list of radio rows, each of which
     // takes the tap anywhere along it.
-    return FinesseRadioGroup<ProfileVisibility>(
+    return UnaRadioGroup<ProfileVisibility>(
       value: settings.visibility,
       onChanged: (value) => settings.update(() => settings.visibility = value),
       child: ListSection(
@@ -1196,7 +1196,7 @@ class _DisplayCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FinesseColumn(
+    return UnaColumn(
       gap: GapSize.lg,
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,

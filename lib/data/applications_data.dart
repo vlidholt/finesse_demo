@@ -1,7 +1,7 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/jobs_data.dart';
 
 /// How far an application has got: a column of the "My applications"
 /// board.

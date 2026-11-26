@@ -1,16 +1,16 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/profile_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/search_screen.dart';
-import 'package:finesse_demo/widgets/profile_about_cards.dart';
-import 'package:finesse_demo/widgets/profile_experience.dart';
-import 'package:finesse_demo/widgets/profile_header_card.dart';
-import 'package:finesse_demo/widgets/profile_mobile_header.dart';
-import 'package:finesse_demo/widgets/profile_rail.dart';
-import 'package:finesse_demo/widgets/profile_tab_content.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/profile_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/search_screen.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/profile_about_cards.dart';
+import 'package:una_demo/widgets/profile_experience.dart';
+import 'package:una_demo/widgets/profile_header_card.dart';
+import 'package:una_demo/widgets/profile_mobile_header.dart';
+import 'package:una_demo/widgets/profile_rail.dart';
+import 'package:una_demo/widgets/profile_tab_content.dart';
 
 /// The Profile destination of the Demo shell: the signed-in user's own
 /// profile.
@@ -108,7 +108,7 @@ class _DesktopProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     final columnGap = Theme.of(context).layoutTheme.gap(GapSize.xl);
 
-    final main = FinesseColumn(
+    final main = UnaColumn(
       gap: GapSize.lg,
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -117,7 +117,7 @@ class _DesktopProfile extends StatelessWidget {
         ..._sections(),
       ],
     );
-    final rail = FinesseColumn(
+    final rail = UnaColumn(
       gap: GapSize.lg,
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -136,7 +136,7 @@ class _DesktopProfile extends StatelessWidget {
           final sideBySide =
               constraints.maxWidth >= _mainMinWidth + columnGap + _railWidth;
           if (!sideBySide) {
-            return FinesseColumn(
+            return UnaColumn(
               gap: GapSize.lg,
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,

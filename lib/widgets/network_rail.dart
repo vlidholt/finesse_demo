@@ -1,10 +1,10 @@
-import 'package:finesse_demo/data/network_data.dart';
-import 'package:finesse_demo/widgets/home_pieces.dart';
-import 'package:finesse_demo/widgets/network_controller.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/network_data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/home_pieces.dart';
+import 'package:una_demo/widgets/network_controller.dart';
 
 /// "Manage my network": one row per list — connections, following, groups,
 /// events, pages — with its count, under a row that leads back to the
@@ -150,13 +150,13 @@ class NetworkEventsCard extends StatelessWidget {
         onPressed: onSeeAll,
         style: theme.textTheme.small.copyWith(color: scheme.tint),
       ),
-      child: FinesseColumn(
+      child: UnaColumn(
         gap: GapSize.lg,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           for (final event in NetworkData.events.take(_shown))
-            FinesseRow(
+            UnaRow(
               gap: GapSize.md,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -226,7 +226,7 @@ class NetworkSuggestedGroupsCard extends StatelessWidget {
         onPressed: onSeeAll,
         style: theme.textTheme.small.copyWith(color: scheme.tint),
       ),
-      child: FinesseColumn(
+      child: UnaColumn(
         gap: GapSize.md,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

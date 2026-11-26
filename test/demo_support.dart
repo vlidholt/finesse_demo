@@ -1,15 +1,15 @@
 import 'dart:io';
 
 import 'package:disco/disco.dart';
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/messages_assistant.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/messages_assistant.dart';
 
 // What the tests of the screens built after the designs share: Network,
 // Notifications, Search and Settings.
@@ -88,7 +88,7 @@ Future<void> pumpDemoScreen(
         demoDestinationProvider,
         demoSessionProvider,
       ],
-      child: FinesseApp(
+      child: UnaApp(
         theme:
             theme ??
             ThemeData(

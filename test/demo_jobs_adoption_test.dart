@@ -1,17 +1,17 @@
 import 'package:disco/disco.dart';
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/data/applications_data.dart';
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/jobs_screen.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/jobs_board_card.dart';
-import 'package:finesse_demo/widgets/jobs_board_view.dart';
-import 'package:finesse_demo/widgets/jobs_detail.dart';
-import 'package:finesse_demo/widgets/jobs_detail_page.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/data/applications_data.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/jobs_screen.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/jobs_board_card.dart';
+import 'package:una_demo/widgets/jobs_board_view.dart';
+import 'package:una_demo/widgets/jobs_detail.dart';
+import 'package:una_demo/widgets/jobs_detail_page.dart';
 
 import 'demo_support.dart';
 
@@ -36,7 +36,7 @@ Future<void> _pumpJobs(WidgetTester tester, {Size size = _desktop}) async {
         demoSessionProvider,
         jobsViewProvider,
       ],
-      child: FinesseApp(
+      child: UnaApp(
         theme: ThemeData(textTheme: TextTheme(family: demoTestFont)),
         home: const Scaffold(body: JobsScreen()),
       ),

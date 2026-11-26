@@ -1,17 +1,17 @@
 import 'dart:ui' show Tristate;
 
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/notifications_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/notifications_screen.dart';
-import 'package:finesse_demo/widgets/home_trending_card.dart';
-import 'package:finesse_demo/widgets/notifications_controller.dart';
-import 'package:finesse_demo/widgets/notifications_rail.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/notifications_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/notifications_screen.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/home_trending_card.dart';
+import 'package:una_demo/widgets/notifications_controller.dart';
+import 'package:una_demo/widgets/notifications_rail.dart';
 
 import 'demo_support.dart';
 

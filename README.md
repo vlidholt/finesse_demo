@@ -1,21 +1,21 @@
 # Demo
 
 A small professional network, built entirely from
-[finesse](https://github.com/vlidholt/finesse) widgets: a home feed with
+[una](https://github.com/vlidholt/una) widgets: a home feed with
 stories, posts and comments; jobs with filters, an Easy Apply stepper and a
 board of your applications; messages with an assistant that streams its
 replies; a profile, notifications, search and settings. Everything in it is
 invented, and nothing you do is sent anywhere.
 
-**Try it:** <https://vlidholt.github.io/finesse_demo/>
+**Try it:** <https://vlidholt.github.io/una_demo/>
 
-![Demo, built with finesse](docs/screenshot.png)
+![Demo, built with una](docs/screenshot.png)
 
-It is the app `finesse`'s default look was measured from, and it follows
+It is the app `una`'s default look was measured from, and it follows
 the theme's form factor: one layout for a desktop window, another for a
 phone, and a navigation rail in between. For the documentation of every
 component, with live previews and a theme editor, see the
-[component library](https://vlidholt.github.io/finesse/).
+[component library](https://vlidholt.github.io/una/).
 
 ## Running it
 
@@ -30,16 +30,16 @@ folder is added (`flutter create . --platforms macos`). Text is set in
 macOS that needs the `com.apple.security.network.client` entitlement in
 `macos/Runner/DebugProfile.entitlements` and `Release.entitlements`.
 
-### Against a local finesse
+### Against a local una
 
-`finesse` comes from git (`main` of `vlidholt/finesse`, pinned by
+`una` comes from git (`main` of `vlidholt/una`, pinned by
 `pubspec.lock`). To work against a checkout next to this one, create a
 `pubspec_overrides.yaml` (it is gitignored):
 
 ```yaml
 dependency_overrides:
-  finesse:
-    path: ../finesse
+  una:
+    path: ../una
 ```
 
 ## Tests

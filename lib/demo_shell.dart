@@ -1,25 +1,25 @@
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/home_screen.dart';
-import 'package:finesse_demo/screens/jobs_screen.dart';
-import 'package:finesse_demo/screens/messages_screen.dart';
-import 'package:finesse_demo/screens/network_screen.dart';
-import 'package:finesse_demo/screens/notifications_screen.dart';
-import 'package:finesse_demo/screens/profile_screen.dart';
-import 'package:finesse_demo/screens/search_screen.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/compose_dialog.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/search_bar.dart';
-import 'package:finesse_demo/widgets/demo_logo.dart';
-import 'package:finesse_demo/widgets/user_menu.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_solidart/flutter_solidart.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/home_screen.dart';
+import 'package:una_demo/screens/jobs_screen.dart';
+import 'package:una_demo/screens/messages_screen.dart';
+import 'package:una_demo/screens/network_screen.dart';
+import 'package:una_demo/screens/notifications_screen.dart';
+import 'package:una_demo/screens/profile_screen.dart';
+import 'package:una_demo/screens/search_screen.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/compose_dialog.dart';
+import 'package:una_demo/widgets/demo_logo.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/search_bar.dart';
+import 'package:una_demo/widgets/user_menu.dart';
 
-export 'package:finesse_demo/navigation.dart';
+export 'package:una_demo/navigation.dart';
 
 /// Demo's chrome: the app bar and navigation around the screen of the
 /// selected [DemoDestination].
@@ -70,7 +70,7 @@ export 'package:finesse_demo/navigation.dart';
 /// context.pushFullScreen((context) => const ConversationScreen());
 /// // which is
 /// Navigator.of(context).push(
-///   FinessePageRoute<void>(builder: (context) => const ConversationScreen()),
+///   UnaPageRoute<void>(builder: (context) => const ConversationScreen()),
 /// );
 /// ```
 ///

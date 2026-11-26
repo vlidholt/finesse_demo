@@ -1,8 +1,8 @@
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
 
 /// The bar a message is written in: add and photo buttons, the field, and
 /// the round send button, on a glass surface that floats over the thread.
@@ -118,8 +118,8 @@ class _MessagesComposerState extends State<MessagesComposer> {
                 ),
                 // A borderless pill in the field's own fill. The design
                 // shows no focus outline here; the caret is the indication.
-                decoration: FinesseDecoration(
-                  border: FinesseBorder.all(
+                decoration: UnaDecoration(
+                  border: UnaBorder.all(
                     width: 0,
                     color: const Color(0x00000000),
                     borderRadius: theme.radii.full,

@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/demo_shell.dart';
-import 'package:finesse/finesse.dart' show TypingIndicator;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart' show TypingIndicator;
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/demo_shell.dart';
 
 import 'perf_support.dart';
 import 'support.dart';

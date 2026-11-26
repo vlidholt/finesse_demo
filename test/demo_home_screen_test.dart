@@ -1,20 +1,20 @@
 import 'dart:io';
 
 import 'package:disco/disco.dart';
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/home_screen.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/home_post_card.dart';
-import 'package:finesse_demo/widgets/home_post_comments.dart';
-import 'package:finesse_demo/widgets/home_stories.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/home_screen.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/home_post_card.dart';
+import 'package:una_demo/widgets/home_post_comments.dart';
+import 'package:una_demo/widgets/home_stories.dart';
 
 // The home feed on its own: inside a `Scaffold` with an empty `AppBar`
 // rather than the Demo shell, so this file does not depend on the other
@@ -66,7 +66,7 @@ Future<void> _pumpHome(
         demoDestinationProvider,
         demoSessionProvider,
       ],
-      child: FinesseApp(
+      child: UnaApp(
         theme: ThemeData(
           brightness: brightness,
           textTheme: TextTheme(family: _fontFamily),

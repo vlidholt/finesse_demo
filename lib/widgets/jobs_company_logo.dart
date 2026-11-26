@@ -1,7 +1,7 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
 
 /// A company's mark on a rounded square, with the hairline the designs draw
 /// just inside its edge so a white logo keeps its shape on a white card.

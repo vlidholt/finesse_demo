@@ -1,23 +1,23 @@
 import 'package:disco/disco.dart';
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/data/profile_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/profile_screen.dart';
-import 'package:finesse_demo/screens/search_screen.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/profile_about_cards.dart';
-import 'package:finesse_demo/widgets/profile_common.dart';
-import 'package:finesse_demo/widgets/profile_experience.dart';
-import 'package:finesse_demo/widgets/profile_header_card.dart';
-import 'package:finesse_demo/widgets/profile_mobile_header.dart';
-import 'package:finesse_demo/widgets/profile_rail.dart';
-import 'package:finesse_demo/widgets/profile_tab_content.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse_demo/widgets/user_menu.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/data/profile_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/profile_screen.dart';
+import 'package:una_demo/screens/search_screen.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/profile_about_cards.dart';
+import 'package:una_demo/widgets/profile_common.dart';
+import 'package:una_demo/widgets/profile_experience.dart';
+import 'package:una_demo/widgets/profile_header_card.dart';
+import 'package:una_demo/widgets/profile_mobile_header.dart';
+import 'package:una_demo/widgets/profile_rail.dart';
+import 'package:una_demo/widgets/profile_tab_content.dart';
+import 'package:una_demo/widgets/user_menu.dart';
 
 const _desktop = Size(1440, 1000);
 const _laptop = Size(1024, 800);
@@ -44,7 +44,7 @@ Future<void> _pumpProfile(
         demoDestinationProvider,
         demoSessionProvider,
       ],
-      child: FinesseApp(
+      child: UnaApp(
         theme: ThemeData(brightness: brightness),
         home: const Scaffold(body: ProfileScreen()),
       ),

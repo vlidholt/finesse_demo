@@ -1,12 +1,12 @@
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/saved_items_sheet.dart';
-import 'package:finesse_demo/widgets/settings_links.dart';
-import 'package:finesse_demo/widgets/verified_badge.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/saved_items_sheet.dart';
+import 'package:una_demo/widgets/settings_links.dart';
+import 'package:una_demo/widgets/verified_badge.dart';
 
 /// The signed-in user's menu: their profile, saved items, settings and the
 /// light/dark switch.
@@ -130,7 +130,7 @@ class _Identity extends StatelessWidget {
           vertical: theme.style.itemPaddingY * step,
         ),
       ),
-      child: FinesseRow(
+      child: UnaRow(
         gap: GapSize.md,
         children: [
           const PersonAvatar(me),
@@ -139,7 +139,7 @@ class _Identity extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                FinesseRow(
+                UnaRow(
                   gap: GapSize.xs,
                   children: [
                     Flexible(

@@ -1,9 +1,9 @@
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
 
 /// What a post carries under its text: photographs, a link preview or an
 /// event. Null-returning for a text-only post.
@@ -290,7 +290,7 @@ class _EventMediaState extends State<_EventMedia> {
                 horizontal: theme.gap(GapSize.md),
                 vertical: inset,
               ),
-              child: FinesseRow(
+              child: UnaRow(
                 gap: GapSize.md,
                 children: [
                   // The same tile as on a card, in the photograph's fixed

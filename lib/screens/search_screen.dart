@@ -1,10 +1,10 @@
-import 'package:finesse_demo/data/search_data.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/search_bar.dart';
-import 'package:finesse_demo/widgets/search_results.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/search_data.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/search_bar.dart';
+import 'package:una_demo/widgets/search_results.dart';
 
 /// Demo's search page: a full-screen route with the field in its app bar.
 ///

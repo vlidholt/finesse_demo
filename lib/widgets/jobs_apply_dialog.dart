@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/jobs_board_view.dart';
-import 'package:finesse_demo/widgets/jobs_state.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/jobs_board_view.dart';
+import 'package:una_demo/widgets/jobs_state.dart';
 
 /// Opens "Easy Apply" for [job]: three short steps — contact details, a
 /// résumé, a last look — in a `Stepper`, and "Submit application".
@@ -267,7 +267,7 @@ class _ContactStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FinesseColumn(
+    return UnaColumn(
       gap: GapSize.md,
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -303,7 +303,7 @@ class _ResumeStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FinesseRadioGroup<(String, String)>(
+    return UnaRadioGroup<(String, String)>(
       value: value,
       onChanged: onChanged,
       child: ListSection(
@@ -345,7 +345,7 @@ class _ReviewStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FinesseColumn(
+    return UnaColumn(
       gap: GapSize.md,
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,

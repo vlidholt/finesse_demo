@@ -1,15 +1,15 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/screens/home_screen.dart';
-import 'package:finesse_demo/widgets/compose_dialog.dart';
-import 'package:finesse_demo/widgets/home_feed_scope.dart';
-import 'package:finesse_demo/widgets/home_post_card.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/demo_previews.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/screens/home_screen.dart';
+import 'package:una_demo/widgets/compose_dialog.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_previews.dart';
+import 'package:una_demo/widgets/home_feed_scope.dart';
+import 'package:una_demo/widgets/home_post_card.dart';
 
 import 'demo_support.dart';
 

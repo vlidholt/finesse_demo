@@ -1,5 +1,5 @@
-import 'package:finesse_demo/data/jobs_data.dart';
 import 'package:flutter/foundation.dart';
+import 'package:una_demo/data/jobs_data.dart';
 
 /// What the "Find jobs" side remembers: the selected listing, the
 /// switched-on filters, and what has been saved, followed and applied to.

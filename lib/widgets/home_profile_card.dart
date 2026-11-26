@@ -1,15 +1,15 @@
-import 'package:finesse_demo/data.dart';
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/data/network_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/widgets/home_pieces.dart';
-import 'package:finesse_demo/widgets/network_links.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/saved_items_sheet.dart';
-import 'package:finesse_demo/widgets/verified_badge.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/data/network_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/home_pieces.dart';
+import 'package:una_demo/widgets/network_links.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
+import 'package:una_demo/widgets/saved_items_sheet.dart';
+import 'package:una_demo/widgets/verified_badge.dart';
 
 /// The left rail's summary of the signed-in user: cover photo, portrait,
 /// name and headline, two figures and three shortcuts.
@@ -129,7 +129,7 @@ class HomeProfileCard extends StatelessWidget {
               horizontal: inset,
               vertical: theme.gap(GapSize.md),
             ),
-            child: FinesseColumn(
+            child: UnaColumn(
               gap: GapSize.sm,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.min,

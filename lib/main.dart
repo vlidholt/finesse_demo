@@ -1,21 +1,21 @@
 import 'package:disco/disco.dart';
-import 'package:finesse/finesse.dart';
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/demo_shell.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/jobs_board_view.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_solidart/flutter_solidart.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/demo_shell.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/jobs_board_view.dart';
 
-export 'package:finesse_demo/app_state.dart';
-export 'package:finesse_demo/navigation.dart'
+export 'package:una_demo/app_state.dart';
+export 'package:una_demo/navigation.dart'
     show DemoDestination, demoDestinationProvider;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SolidartConfig.devToolsEnabled = false;
-  // finesse bundles no fonts. Fetch Geist before the first frame, so the app
+  // una bundles no fonts. Fetch Geist before the first frame, so the app
   // does not open in the fallback font and then reflow. On iOS and macOS,
   // bars, menus, sheets and controls are drawn with Liquid Glass: load its
   // shaders now too, so the first glass surfaces are not a frame late.
@@ -63,7 +63,7 @@ Future<void> loadAppFont({
 }
 
 /// The package's default look, set in Geist: the theme the designs were
-/// drawn in. Built once; `FinesseApp` switches between the two.
+/// drawn in. Built once; `UnaApp` switches between the two.
 final appTheme = ThemeData(
   brightness: Brightness.light,
   textTheme: appTextTheme,
@@ -75,7 +75,7 @@ final appDarkTheme = ThemeData(
 
 /// Every app-level provider: the settings in `app_state.dart`, the shell's
 /// selected destination, the session and the Jobs screen's view. They sit
-/// above [FinesseApp], so every route can read them.
+/// above [UnaApp], so every route can read them.
 final demoProviders = <InstantiableProvider>[
   ...appProviders,
   demoDestinationProvider,
@@ -83,7 +83,7 @@ final demoProviders = <InstantiableProvider>[
   jobsViewProvider,
 ];
 
-/// Demo: a fictional professional network, built with finesse.
+/// Demo: a fictional professional network, built with una.
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -95,7 +95,7 @@ class App extends StatelessWidget {
         builder: (context, _) {
           final themeMode = themeModeProvider.of(context).value;
           final textScale = textScaleProvider.of(context).value;
-          return FinesseApp(
+          return UnaApp(
             title: 'Demo',
             debugShowCheckedModeBanner: false,
             themeMode: themeMode,

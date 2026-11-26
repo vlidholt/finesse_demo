@@ -1,19 +1,19 @@
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/data/network_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/home_trending_card.dart';
-import 'package:finesse_demo/widgets/network_controller.dart';
-import 'package:finesse_demo/widgets/network_invitations_card.dart';
-import 'package:finesse_demo/widgets/network_links.dart';
-import 'package:finesse_demo/widgets/network_rail.dart';
-import 'package:finesse_demo/widgets/network_section_view.dart';
-import 'package:finesse_demo/widgets/network_suggestions.dart';
-import 'package:finesse_demo/widgets/settings_links.dart';
-import 'package:finesse_demo/widgets/demo_pieces.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/data/network_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/demo_pieces.dart';
+import 'package:una_demo/widgets/home_trending_card.dart';
+import 'package:una_demo/widgets/network_controller.dart';
+import 'package:una_demo/widgets/network_invitations_card.dart';
+import 'package:una_demo/widgets/network_links.dart';
+import 'package:una_demo/widgets/network_rail.dart';
+import 'package:una_demo/widgets/network_section_view.dart';
+import 'package:una_demo/widgets/network_suggestions.dart';
+import 'package:una_demo/widgets/settings_links.dart';
 
 /// The Network destination of the Demo shell: invitations, people you
 /// may know, and the lists behind "Manage my network".
@@ -93,7 +93,7 @@ class _DesktopNetwork extends StatelessWidget {
               ? ((full - width) / (full - least)).clamp(0.0, 1.0)
               : 0.0;
 
-          final main = FinesseColumn(
+          final main = UnaColumn(
             gap: GapSize.lg,
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -107,7 +107,7 @@ class _DesktopNetwork extends StatelessWidget {
             ],
           );
 
-          return FinesseColumn(
+          return UnaColumn(
             gap: GapSize.lg,
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -153,7 +153,7 @@ class _DesktopNetwork extends StatelessWidget {
                         width:
                             _rightWidth -
                             (_rightWidth - _rightMinWidth) * squeeze,
-                        child: FinesseColumn(
+                        child: UnaColumn(
                           gap: GapSize.lg,
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -1,9 +1,9 @@
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/widgets/home_pieces.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/home_pieces.dart';
 
 /// The right rail's "Trending in design" card: five ranked topics.
 class HomeTrendingCard extends StatelessWidget {
@@ -46,7 +46,7 @@ class HomeTrendingCard extends StatelessWidget {
               builder: (context, states) => FocusRing(
                 visible: states.contains(WidgetState.focused),
                 borderRadius: theme.radii.sm,
-                child: FinesseRow(
+                child: UnaRow(
                   gap: GapSize.md,
                   children: [
                     SizedBox(

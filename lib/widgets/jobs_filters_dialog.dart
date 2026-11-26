@@ -1,8 +1,8 @@
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/widgets/jobs_state.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/jobs_state.dart';
 
 /// Opens "All filters": every filter of the Jobs search as a switch. They
 /// are the chips' own state, so a switch flipped here selects its chip.
@@ -22,7 +22,7 @@ Future<void> showJobFiltersDialog(BuildContext context, JobsState state) {
             child: const Text('Show results'),
           ),
         ],
-        child: FinesseColumn(
+        child: UnaColumn(
           gap: GapSize.md,
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,

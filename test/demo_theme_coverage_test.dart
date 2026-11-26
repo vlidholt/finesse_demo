@@ -1,16 +1,16 @@
 import 'dart:io';
 
-import 'package:finesse_demo/screens/home_screen.dart';
-import 'package:finesse_demo/screens/jobs_screen.dart';
-import 'package:finesse_demo/screens/network_screen.dart';
-import 'package:finesse_demo/screens/notifications_screen.dart';
-import 'package:finesse_demo/screens/profile_screen.dart';
-import 'package:finesse_demo/screens/search_screen.dart';
-import 'package:finesse_demo/screens/settings_screen.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/screens/home_screen.dart';
+import 'package:una_demo/screens/jobs_screen.dart';
+import 'package:una_demo/screens/network_screen.dart';
+import 'package:una_demo/screens/notifications_screen.dart';
+import 'package:una_demo/screens/profile_screen.dart';
+import 'package:una_demo/screens/search_screen.dart';
+import 'package:una_demo/screens/settings_screen.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
 
 import 'demo_support.dart';
 import 'support.dart';
@@ -297,7 +297,7 @@ StyleTokens _exaggerated(StyleTokens style) {
 }
 
 ThemeData _theme({required bool exaggerated}) {
-  const base = StyleTokens.finesse;
+  const base = StyleTokens.una;
   return ThemeData(
     textTheme: TextTheme(family: demoTestFont),
     style: exaggerated

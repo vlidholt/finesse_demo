@@ -1,12 +1,12 @@
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/widgets/jobs_apply_dialog.dart';
-import 'package:finesse_demo/widgets/jobs_company_logo.dart';
-import 'package:finesse_demo/widgets/jobs_detail_sections.dart';
-import 'package:finesse_demo/widgets/jobs_state.dart';
-import 'package:finesse_demo/widgets/demo_actions.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/widgets/demo_actions.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/jobs_apply_dialog.dart';
+import 'package:una_demo/widgets/jobs_company_logo.dart';
+import 'package:una_demo/widgets/jobs_detail_sections.dart';
+import 'package:una_demo/widgets/jobs_state.dart';
 
 /// Everything the designs say about one job, top to bottom: the company
 /// header, the title, the actions, the fact tiles, the match panel, the
@@ -207,7 +207,7 @@ class JobActions extends StatelessWidget {
       ),
     );
 
-    return FinesseRow(
+    return UnaRow(
       gap: GapSize.sm,
       children: [
         if (expand) Expanded(child: apply) else apply,

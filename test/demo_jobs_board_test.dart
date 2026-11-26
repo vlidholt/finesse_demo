@@ -1,26 +1,25 @@
 import 'dart:io';
 
 import 'package:disco/disco.dart';
-import 'package:finesse_demo/app_state.dart';
-import 'package:finesse_demo/data/applications_data.dart';
-import 'package:finesse_demo/data/jobs_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/screens/jobs_screen.dart';
-import 'package:finesse_demo/session.dart';
-import 'package:finesse_demo/widgets/jobs_board.dart';
-import 'package:finesse_demo/widgets/jobs_board_card.dart';
-import 'package:finesse_demo/widgets/jobs_board_controller.dart';
-import 'package:finesse_demo/widgets/jobs_board_view.dart';
-import 'package:finesse_demo/widgets/jobs_job_card.dart';
-import 'package:finesse_demo/widgets/jobs_state.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/app_state.dart';
+import 'package:una_demo/data/applications_data.dart';
+import 'package:una_demo/data/jobs_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/screens/jobs_screen.dart';
+import 'package:una_demo/session.dart';
+import 'package:una_demo/widgets/jobs_board.dart';
+import 'package:una_demo/widgets/jobs_board_card.dart';
+import 'package:una_demo/widgets/jobs_board_controller.dart';
+import 'package:una_demo/widgets/jobs_board_view.dart';
+import 'package:una_demo/widgets/jobs_job_card.dart';
+import 'package:una_demo/widgets/jobs_state.dart';
 
 import 'demo_support.dart';
-
 import 'support.dart' show pumpApp, setUpFonts;
 
 const _desktop = Size(1440, 1000);
@@ -72,7 +71,7 @@ Future<void> _pumpJobs(
         demoSessionProvider,
         if (provideView) jobsViewProvider,
       ],
-      child: FinesseApp(
+      child: UnaApp(
         theme: ThemeData(
           brightness: brightness,
           textTheme: TextTheme(family: _font),

@@ -1,10 +1,10 @@
-import 'package:finesse_demo/data/home_data.dart';
-import 'package:finesse_demo/navigation.dart';
-import 'package:finesse_demo/widgets/home_pieces.dart';
-import 'package:finesse_demo/widgets/person_avatar.dart';
-import 'package:finesse_demo/widgets/demo_metrics.dart';
-import 'package:finesse/finesse.dart';
 import 'package:flutter/widgets.dart';
+import 'package:una/una.dart';
+import 'package:una_demo/data/home_data.dart';
+import 'package:una_demo/navigation.dart';
+import 'package:una_demo/widgets/demo_metrics.dart';
+import 'package:una_demo/widgets/home_pieces.dart';
+import 'package:una_demo/widgets/person_avatar.dart';
 
 /// The right rail's "Add to your network" card.
 class HomeSuggestionsCard extends StatefulWidget {
@@ -42,7 +42,7 @@ class _HomeSuggestionsCardState extends State<HomeSuggestionsCard> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          FinesseColumn(
+          UnaColumn(
             // 16 between people; this card is desktop-only, where the
             // theme's `lg` gap is that.
             gap: GapSize.lg,
@@ -96,7 +96,7 @@ class _SuggestionRow extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final person = suggestion.person;
-    return FinesseRow(
+    return UnaRow(
       gap: GapSize.md,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
