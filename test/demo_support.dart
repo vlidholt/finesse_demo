@@ -9,6 +9,7 @@ import 'package:una/una.dart';
 import 'package:una_demo/app_state.dart';
 import 'package:una_demo/navigation.dart';
 import 'package:una_demo/session.dart';
+import 'package:una_demo/teal_color_scheme.dart';
 import 'package:una_demo/widgets/messages_assistant.dart';
 
 // What the tests of the screens built after the designs share: Network,
@@ -92,7 +93,7 @@ Future<void> pumpDemoScreen(
         theme:
             theme ??
             ThemeData(
-              brightness: brightness,
+              colorScheme: TealColorScheme.of(brightness),
               textTheme: TextTheme(family: demoTestFont),
             ),
         builder: (context, child) => MediaQuery(

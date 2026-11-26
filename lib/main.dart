@@ -11,6 +11,7 @@ import 'package:una_demo/widgets/jobs_board_view.dart';
 export 'package:una_demo/app_state.dart';
 export 'package:una_demo/navigation.dart'
     show DemoDestination, demoDestinationProvider;
+export 'package:una_demo/teal_color_scheme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:una/una.dart';
 import 'package:una_demo/screens/messages_screen.dart';
+import 'package:una_demo/teal_color_scheme.dart';
 import 'package:una_demo/widgets/messages_assistant.dart';
 import 'package:una_demo/widgets/messages_composer.dart';
 import 'package:una_demo/widgets/messages_conversation.dart';
@@ -32,7 +33,7 @@ Future<void> _pump(
     DemoSessionHost(
       replies: replies,
       child: UnaApp(
-        theme: ThemeData(brightness: brightness),
+        theme: ThemeData(colorScheme: TealColorScheme.of(brightness)),
         home: const Scaffold(
           appBar: AppBar(title: Text('demo')),
           body: MessagesScreen(),

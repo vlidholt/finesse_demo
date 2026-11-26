@@ -9,6 +9,7 @@ import 'package:una_demo/data/jobs_data.dart';
 import 'package:una_demo/navigation.dart';
 import 'package:una_demo/screens/jobs_screen.dart';
 import 'package:una_demo/session.dart';
+import 'package:una_demo/teal_color_scheme.dart';
 import 'package:una_demo/widgets/jobs_detail.dart';
 import 'package:una_demo/widgets/jobs_detail_page.dart';
 import 'package:una_demo/widgets/jobs_job_card.dart';
@@ -48,7 +49,7 @@ Future<void> _pumpJobs(
         demoSessionProvider,
       ],
       child: UnaApp(
-        theme: ThemeData(brightness: brightness),
+        theme: ThemeData(colorScheme: TealColorScheme.of(brightness)),
         home: const Scaffold(body: JobsScreen()),
       ),
     ),

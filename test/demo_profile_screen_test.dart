@@ -9,6 +9,7 @@ import 'package:una_demo/navigation.dart';
 import 'package:una_demo/screens/profile_screen.dart';
 import 'package:una_demo/screens/search_screen.dart';
 import 'package:una_demo/session.dart';
+import 'package:una_demo/teal_color_scheme.dart';
 import 'package:una_demo/widgets/demo_metrics.dart';
 import 'package:una_demo/widgets/profile_about_cards.dart';
 import 'package:una_demo/widgets/profile_common.dart';
@@ -45,7 +46,7 @@ Future<void> _pumpProfile(
         demoSessionProvider,
       ],
       child: UnaApp(
-        theme: ThemeData(brightness: brightness),
+        theme: ThemeData(colorScheme: TealColorScheme.of(brightness)),
         home: const Scaffold(body: ProfileScreen()),
       ),
     ),
