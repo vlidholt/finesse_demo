@@ -1073,6 +1073,7 @@ class _ThemeCardState extends State<_ThemeCard> {
     return SignalBuilder(
       builder: (context, _) {
         final mode = themeModeProvider.of(context);
+        final glass = liquidGlassProvider.of(context);
         final textScale = textScaleProvider.of(context);
         final scale = textScale.value;
         // The slider is controlled: the text scale is the app's, which
@@ -1084,7 +1085,7 @@ class _ThemeCardState extends State<_ThemeCard> {
 
         return _SettingsCard(
           title: 'Theme',
-          description: 'These two change the whole app, right away.',
+          description: 'These change the whole app, right away.',
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1119,6 +1120,40 @@ class _ThemeCardState extends State<_ThemeCard> {
                         value: ThemeMode.dark,
                         icon: PhosphorIcon(PhosphorIconsRegular.moon),
                         label: Text('Dark'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const _RowDivider(),
+              _SettingRow(
+                title: 'Liquid Glass',
+                detail: 'Auto uses it on iPhone, iPad and Mac',
+                trailingIsLabelled: true,
+                stacked: mobile,
+                trailing: Semantics(
+                  label: 'Liquid Glass',
+                  container: true,
+                  child: SegmentedControl<LiquidGlassMode>(
+                    expand: mobile,
+                    value: glass.value,
+                    onChanged: (value) => glass.value = value,
+                    segments: const [
+                      Segment(
+                        value: LiquidGlassMode.auto,
+                        icon: PhosphorIcon(PhosphorIconsRegular.deviceMobile),
+                        label: Text('Auto'),
+                        tooltip: 'Follow the platform',
+                      ),
+                      Segment(
+                        value: LiquidGlassMode.always,
+                        icon: PhosphorIcon(PhosphorIconsRegular.drop),
+                        label: Text('On'),
+                      ),
+                      Segment(
+                        value: LiquidGlassMode.never,
+                        icon: PhosphorIcon(PhosphorIconsRegular.dropSlash),
+                        label: Text('Off'),
                       ),
                     ],
                   ),

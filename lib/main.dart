@@ -76,6 +76,23 @@ final appDarkTheme = ThemeData(
   textTheme: appTextTheme,
 );
 
+/// [appTheme] or [appDarkTheme] with Liquid Glass forced on or off, built
+/// once per setting: an unequal theme per build would be a theme change on
+/// every rebuild.
+ThemeData themeFor(Brightness brightness, LiquidGlassMode mode) {
+  final base = brightness == Brightness.dark ? appDarkTheme : appTheme;
+  if (mode == LiquidGlassMode.auto) return base;
+  return _glassThemes[(brightness, mode)] ??= ThemeData(
+    colorScheme: brightness == Brightness.dark
+        ? const TealColorScheme.dark()
+        : const TealColorScheme.light(),
+    textTheme: appTextTheme,
+    liquidGlass: LiquidGlassTheme(mode: mode),
+  );
+}
+
+final _glassThemes = <(Brightness, LiquidGlassMode), ThemeData>{};
+
 /// Every app-level provider: the settings in `app_state.dart`, the shell's
 /// selected destination, the session and the Jobs screen's view. They sit
 /// above [UnaApp], so every route can read them.
@@ -98,12 +115,13 @@ class App extends StatelessWidget {
         builder: (context, _) {
           final themeMode = themeModeProvider.of(context).value;
           final textScale = textScaleProvider.of(context).value;
+          final glass = liquidGlassProvider.of(context).value;
           return UnaApp(
             title: 'Una',
             debugShowCheckedModeBanner: false,
             themeMode: themeMode,
-            theme: appTheme,
-            darkTheme: appDarkTheme,
+            theme: themeFor(Brightness.light, glass),
+            darkTheme: themeFor(Brightness.dark, glass),
             home: const DemoShell(),
             builder: (context, child) => MediaQuery(
               data: MediaQuery.of(context).copyWith(

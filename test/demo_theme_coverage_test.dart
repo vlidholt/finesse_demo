@@ -297,7 +297,7 @@ StyleTokens _exaggerated(StyleTokens style) {
 }
 
 ThemeData _theme({required bool exaggerated}) {
-  const base = StyleTokens.una;
+  const base = StyleTokens.fluid;
   return ThemeData(
     textTheme: TextTheme(family: demoTestFont),
     style: exaggerated

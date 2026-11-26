@@ -356,7 +356,10 @@ void main() {
       final mode = themeModeProvider.of(demoContext(tester));
       expect(mode.value, ThemeMode.light);
 
-      await tester.tap(find.text('Auto'));
+      // The Liquid Glass control beside it has an Auto of its own.
+      await tester.tap(
+        find.descendant(of: control, matching: find.text('Auto')),
+      );
       await settleFrames(tester);
       expect(mode.value, ThemeMode.system);
       await tester.tap(find.text('Dark'));

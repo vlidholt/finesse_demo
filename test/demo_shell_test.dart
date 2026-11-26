@@ -407,6 +407,29 @@ void main() {
     expect(appDarkTheme.colorScheme, const TealColorScheme.dark());
   });
 
+  testWidgets('the Liquid Glass setting re-themes the app, on the same '
+      'palette', (tester) async {
+    await pumpApp(tester);
+    final glass = liquidGlassProvider.of(appContext(tester));
+    expect(glass.value, LiquidGlassMode.auto);
+    expect(Theme.of(appContext(tester)), appTheme);
+
+    glass.value = LiquidGlassMode.never;
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+    final off = Theme.of(appContext(tester));
+    expect(off.liquidGlass.mode, LiquidGlassMode.never);
+    expect(off.colorScheme, const TealColorScheme.light());
+    // One theme per setting, not one per build.
+    expect(
+      identical(
+        themeFor(Brightness.light, LiquidGlassMode.never),
+        themeFor(Brightness.light, LiquidGlassMode.never),
+      ),
+      isTrue,
+    );
+  });
+
   group('on a phone (390x844)', () {
     testWidgets('the app opens on Una with the bottom navigation', (
       tester,

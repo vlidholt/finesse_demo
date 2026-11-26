@@ -3,13 +3,18 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_solidart/flutter_solidart.dart';
 import 'package:una/una.dart';
 
-/// The app-wide settings: light or dark, and the text size.
+/// The app-wide settings: light or dark, Liquid Glass, and the text size.
 ///
 /// Both are provided above `UnaApp` (see `App` in `main.dart`), so every
 /// route — including full-screen ones a screen pushes — can read them. The
 /// Settings screen writes them, and so does the shell's dark-mode button.
 
 final themeModeProvider = Provider((_) => Signal(ThemeMode.light));
+
+/// Whether the app draws with Liquid Glass: `auto` on iOS and macOS, as
+/// the package decides, or forced on or off — off to see on an iPhone what
+/// every other platform gets.
+final liquidGlassProvider = Provider((_) => Signal(LiquidGlassMode.auto));
 
 /// The text scale the whole app is shown at, in place of the platform's.
 ///
@@ -21,6 +26,7 @@ final textScaleProvider = Provider((_) => Signal(1.0));
 /// of a test that pumps part of it).
 final appProviders = <Provider<Object>>[
   themeModeProvider,
+  liquidGlassProvider,
   textScaleProvider,
 ];
 
