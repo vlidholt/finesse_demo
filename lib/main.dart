@@ -1,4 +1,6 @@
 import 'package:disco/disco.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/services.dart' show BrowserContextMenu;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_solidart/flutter_solidart.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,6 +26,10 @@ Future<void> main() async {
   await Future.wait([
     loadAppFont(timeout: const Duration(seconds: 3)),
     LiquidGlass.initialize(),
+    // The app's right-clicks open menus of its own, and the browser's menu
+    // would open on top of them. Turned off once, before the first frame:
+    // toggling it later remounts every `SelectionArea`.
+    if (kIsWeb) BrowserContextMenu.disableContextMenu(),
   ]);
   runApp(const App());
 }

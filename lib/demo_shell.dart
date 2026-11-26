@@ -31,7 +31,7 @@ export 'package:una_demo/navigation.dart';
 ///   top destinations, the dark-mode button and the avatar pill, which
 ///   opens the [UserMenu] (profile, saved items, settings, light/dark).
 /// * **A narrow desktop** — a tablet held upright, a small window: below
-///   [topBarFrom] the destinations leave the bar for a `NavigationRail`
+///   [topBarFrom] the destinations leave the bar for the scaffold's rail
 ///   down the start edge, under a round "Create post" button, and the bar
 ///   keeps its search field whole.
 /// * **Phone** — a short app bar with the logo and three icon buttons
@@ -86,7 +86,7 @@ class DemoShell extends StatefulWidget {
   const DemoShell({super.key});
 
   /// The width of the shell from which a desktop's destinations are in the
-  /// top bar. Below it they are in a `NavigationRail`.
+  /// top bar. Below it they are in the scaffold's rail.
   static const topBarFrom = 1024.0;
 
   @override

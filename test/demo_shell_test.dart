@@ -16,6 +16,12 @@ import 'package:una_demo/widgets/una_logo.dart';
 
 import 'support.dart';
 
+/// `NavigationScaffold`'s rail, which una does not export as a widget of
+/// its own.
+final _rail = find.byWidgetPredicate(
+  (widget) => '${widget.runtimeType}' == 'NavigationRail',
+);
+
 void main() {
   setUpAll(setUpFonts);
 
@@ -229,7 +235,7 @@ void main() {
           reason: '$width',
         );
         expect(
-          find.byType(NavigationRail),
+          _rail,
           inTopBar ? findsNothing : findsOneWidget,
           reason: '$width',
         );
@@ -243,7 +249,7 @@ void main() {
     ) async {
       await pumpApp(tester, size: const Size(900, 1100));
       Finder inRail(Finder finder) =>
-          find.descendant(of: find.byType(NavigationRail), matching: finder);
+          find.descendant(of: _rail, matching: finder);
 
       for (final label in [
         'Home',
@@ -256,7 +262,7 @@ void main() {
       }
       // A step wider than the package's rail, so "Notifications" fits.
       expect(
-        tester.getSize(find.byType(NavigationRail)).width,
+        tester.getSize(_rail).width,
         greaterThan(ThemeData().navigationRailTheme.width!),
       );
       expect(inRail(find.text('Me')), findsNothing);
@@ -285,7 +291,7 @@ void main() {
       final home = tester.element(find.byType(HomeScreen));
       tester.view.physicalSize = const Size(900, 900);
       await settle(tester);
-      expect(find.byType(NavigationRail), findsOneWidget);
+      expect(_rail, findsOneWidget);
       expect(tester.element(find.byType(HomeScreen)), same(home));
       tester.view.physicalSize = const Size(1280, 900);
       await settle(tester);
