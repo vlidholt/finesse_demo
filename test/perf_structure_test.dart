@@ -110,10 +110,12 @@ void main() {
           // An average over a fixed distance of scroll: with the cover at
           // 220, every frame of it is still collapsing (at 132 the bar
           // had settled for the last few), so the budget is higher than
-          // the work per collapsing frame, which did not change.
+          // the work per collapsing frame, which did not change. (46 since
+          // a phone's bar keeps a margin above its toolbar with no status
+          // bar: a little more of the distance is still collapsing.)
           expect(
             collapse.paintsPerFrame,
-            lessThan(44),
+            lessThan(46),
             reason: collapse.topPaints(),
           );
           // Nothing of the page is among them.
